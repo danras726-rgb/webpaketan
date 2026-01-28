@@ -41,7 +41,7 @@
 
             <!-- Mobile Header CTA -->
             <div class="md:hidden">
-                <button onclick="showPage('contact')" class="bg-amber-500 text-emerald-900 px-3 py-1.5 rounded-lg text-xs font-bold shadow-md">
+                <button onclick="showPage('contact', 'Konsultasi Lainnya')" class="bg-amber-500 text-emerald-900 px-3 py-1.5 rounded-lg text-xs font-bold shadow-md">
                     Pesan Sekarang
                 </button>
             </div>
@@ -74,7 +74,7 @@
                             </span>
                         </div>
                         <h1 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-stone-800 leading-tight">
-                            Sajian Sate Kambing <span class="text-emerald-700">Legendaris</span> Untuk Momen Sakral Anda.
+                            Sajian Sate dan Gule Kambing <span class="text-emerald-700">Legendaris</span> Untuk Momen Sakral Anda.
                         </h1>
                         <p class="text-base md:text-lg lg:text-xl text-stone-600 leading-relaxed max-w-xl mx-auto md:mx-0">
                             Spesialis Sate & Gule untuk Aqiqah, Pernikahan, dan Acara Besar. 
@@ -84,7 +84,7 @@
                             <button onclick="showPage('menu')" class="bg-emerald-800 hover:bg-emerald-900 text-white px-6 md:px-8 py-3.5 md:py-4 rounded-xl text-base md:text-lg font-semibold shadow-lg transition flex items-center justify-center gap-2">
                                 Lihat Paket Pemesanan <i data-lucide="arrow-right" class="w-5 h-5"></i>
                             </button>
-                            <button onclick="showPage('contact')" class="bg-white border-2 border-emerald-800 text-emerald-800 hover:bg-emerald-50 px-6 md:px-8 py-3.5 md:py-4 rounded-xl text-base md:text-lg font-semibold transition">
+                            <button onclick="showPage('contact', 'Konsultasi Lainnya')" class="bg-white border-2 border-emerald-800 text-emerald-800 hover:bg-emerald-50 px-6 md:px-8 py-3.5 md:py-4 rounded-xl text-base md:text-lg font-semibold transition">
                                 Konsultasi Gratis
                             </button>
                         </div>
@@ -157,7 +157,7 @@
                                 <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> Acar & Sambal</li>
                             </ul>
                         </div>
-                        <div class="p-6 bg-stone-50 border-t"><button onclick="showPage('contact', 'Paket Hemat')" class="w-full py-3 rounded-xl border-2 border-emerald-800 text-emerald-800 font-bold text-sm">Pesan Paket</button></div>
+                        <div class="p-6 bg-stone-50 border-t"><button onclick="showPage('contact', 'Paket Hemat')" class="w-full py-3 rounded-xl border-2 border-emerald-800 text-emerald-800 font-bold text-sm hover:bg-emerald-50 transition-colors">Pesan Paket Ini</button></div>
                     </div>
                     <!-- Paket Sedang -->
                     <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-amber-400 ring-2 ring-amber-100 flex flex-col transition-all hover:shadow-2xl">
@@ -172,7 +172,7 @@
                                 <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> Acar, Sambal & Bumbu</li>
                             </ul>
                         </div>
-                        <div class="p-6 bg-stone-50 border-t"><button onclick="showPage('contact', 'Paket Sedang')" class="w-full py-3 rounded-xl bg-emerald-800 text-white font-bold text-sm">Pesan Sekarang</button></div>
+                        <div class="p-6 bg-stone-50 border-t"><button onclick="showPage('contact', 'Paket Sedang')" class="w-full py-3 rounded-xl bg-emerald-800 text-white font-bold text-sm hover:bg-emerald-900 shadow-md transition-colors">Pesan Sekarang</button></div>
                     </div>
                     <!-- Paket Besar -->
                     <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-200 flex flex-col transition-all hover:shadow-2xl">
@@ -186,7 +186,7 @@
                                 <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> Acar, Sambal & Bumbu</li>
                             </ul>
                         </div>
-                        <div class="p-6 bg-stone-50 border-t"><button onclick="showPage('contact', 'Paket Besar')" class="w-full py-3 rounded-xl border-2 border-emerald-800 text-emerald-800 font-bold text-sm">Pesan Paket</button></div>
+                        <div class="p-6 bg-stone-50 border-t"><button onclick="showPage('contact', 'Paket Besar')" class="w-full py-3 rounded-xl border-2 border-emerald-800 text-emerald-800 font-bold text-sm hover:bg-emerald-50 transition-colors">Pesan Paket Ini</button></div>
                     </div>
                     <!-- Paket Jasa Masak -->
                     <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-200 flex flex-col transition-all hover:shadow-2xl">
@@ -197,16 +197,16 @@
                                 <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> Kambing Bawa Sendiri</li>
                                 <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> Porsi Tergantung Kambing</li>
                                 <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> Termasuk Acar & Sambal</li>
-                                <li class="flex items-start gap-3 text-stone-600 text-xs text-stone-400 italic"><i data-lucide="info" class="w-3 h-3 mt-0.5"></i> Tambahan biaya jika > 700 sate</li>
+                                <li class="flex items-start gap-3 text-stone-600 text-xs text-stone-400 italic"><i data-lucide="info" class="w-3 h-3 mt-0.5"></i> Ada biaya tambahan jika > 700 sate</li>
                             </ul>
                         </div>
-                        <div class="p-6 bg-stone-50 border-t"><button onclick="showPage('contact', 'Paket Jasa Masak')" class="w-full py-3 rounded-xl border-2 border-emerald-800 text-emerald-800 font-bold text-sm">Tanya Jasa</button></div>
+                        <div class="p-6 bg-stone-50 border-t"><button onclick="showPage('contact', 'Paket Jasa Masak')" class="w-full py-3 rounded-xl border-2 border-emerald-800 text-emerald-800 font-bold text-sm hover:bg-emerald-50 transition-colors">Tanya Jasa Masak</button></div>
                     </div>
                 </div>
 
                 <div class="text-center mb-10 md:mb-12">
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-emerald-900 mb-4">Paket Kambing Guling</h2>
-                    <p class="text-base md:text-lg text-stone-600 max-w-3xl mx-auto leading-relaxed">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-emerald-900 mb-4 text-center">Paket Kambing Guling</h2>
+                    <p class="text-base md:text-lg text-stone-600 max-w-3xl mx-auto leading-relaxed text-center">
                         Hadirkan kemewahan dalam setiap perayaan dengan sajian eksklusif yang tidak tersedia dalam porsi satuan. 
                     </p>
                 </div>
@@ -216,26 +216,26 @@
                         <div>
                             <div class="flex justify-between items-start mb-4">
                                <h3 class="text-xl md:text-2xl font-bold text-stone-800">Jasa Masak Kambing Guling</h3>
-                               <div class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-[10px] font-bold">KAMBING SENDIRI</div>
+                               <div class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Kambing Sendiri</div>
                             </div>
                             <p class="text-stone-600 mb-6 text-sm leading-relaxed">Kambing dari Anda kami bakar matang dari dapur, lalu dibawa utuh ke lokasi. Tim kami melayani pengirisan di acara. Termasuk kecap khusus, acar, dan sambal.</p>
                         </div>
                         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t pt-6">
                             <div class="text-xl md:text-2xl font-bold text-emerald-700">Rp 1.200.000</div>
-                            <button onclick="showPage('contact', 'Jasa Masak Kambing Guling')" class="w-full sm:w-auto bg-emerald-800 text-white px-8 py-2.5 rounded-xl text-sm font-bold shadow-md">Tanya Detail</button>
+                            <button onclick="showPage('contact', 'Jasa Masak Kambing Guling')" class="w-full sm:w-auto bg-emerald-800 text-white px-8 py-2.5 rounded-xl text-sm font-bold shadow-md hover:bg-emerald-900 transition-colors">Tanya Detail</button>
                         </div>
                     </div>
                     <div class="bg-white p-6 md:p-8 rounded-2xl shadow-md border-l-[8px] border-emerald-800 flex flex-col justify-between transition-all hover:shadow-xl">
                         <div>
                             <div class="flex justify-between items-start mb-4">
                                <h3 class="text-xl md:text-2xl font-bold text-stone-800">Kambing Guling (Dari Kami)</h3>
-                               <div class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-[10px] font-bold">KAMBING DARI KAMI</div>
+                               <div class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Kambing Dari Kami</div>
                             </div>
                             <p class="text-stone-600 mb-6 text-sm leading-relaxed">Kambing pilihan dari kami yang dibakar matang dari dapur, lalu dibawa utuh ke lokasi. Tim kami melayani pengirisan di acara. Termasuk kecap khusus, acar, dan sambal.</p>
                         </div>
                         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t pt-6">
                             <div class="text-xl md:text-2xl font-bold text-emerald-700">Rp 2.500.000</div>
-                            <button onclick="showPage('contact', 'Kambing Guling (Dari Kami)')" class="w-full sm:w-auto bg-emerald-800 text-white px-8 py-2.5 rounded-xl text-sm font-bold shadow-md">Pesan Sekarang</button>
+                            <button onclick="showPage('contact', 'Kambing Guling (Dari Kami)')" class="w-full sm:w-auto bg-emerald-800 text-white px-8 py-2.5 rounded-xl text-sm font-bold shadow-md hover:bg-emerald-900 transition-colors">Pesan Sekarang</button>
                         </div>
                     </div>
                 </div>
@@ -273,7 +273,7 @@
                                         </div>
                                         <div>
                                             <p class="text-xs opacity-60 uppercase tracking-widest font-bold">Lokasi Warung</p>
-                                            <p class="text-base font-bold leading-tight">Jl. Brigjen Katamso No.88-81</p>
+                                            <p class="text-base font-bold leading-tight text-center">Jl. Brigjen Katamso No.88-81</p>
                                             <p class="text-xs opacity-80 mt-1">Tompokersan, Lumajang, Jawa Timur</p>
                                         </div>
                                     </div>
@@ -342,8 +342,8 @@
     <!-- FOOTER -->
     <footer class="bg-stone-900 text-stone-400 py-16 hidden md:block">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-serif text-amber-500 font-bold mb-6 tracking-widest">CAKSABAR</h2>
-            <p class="mb-10 max-w-2xl mx-auto text-lg opacity-80 leading-relaxed">
+            <h2 class="text-3xl font-serif text-amber-500 font-bold mb-6 tracking-widest text-center">CAKSABAR</h2>
+            <p class="mb-10 max-w-2xl mx-auto text-lg opacity-80 leading-relaxed text-center">
                 Menghadirkan kenyamanan cita rasa otentik dalam balutan layanan modern yang praktis. Kami mengutamakan kemudahan dan profesionalitas demi menyempurnakan setiap momen berharga Anda.
             </p>
             <div class="border-t border-white/5 pt-10 text-xs uppercase tracking-widest opacity-40">
@@ -356,38 +356,56 @@
         // Inisialisasi Ikon
         lucide.createIcons();
 
-        // Navigasi Halaman
+        // Daftar Harga Paket
+        const packagePrices = {
+            "Paket Hemat": "Rp 2.250.000",
+            "Paket Sedang": "Rp 2.500.000",
+            "Paket Besar": "Rp 3.000.000",
+            "Paket Jasa Masak": "Rp 850.000",
+            "Jasa Masak Kambing Guling": "Rp 1.200.000",
+            "Kambing Guling (Dari Kami)": "Rp 2.500.000",
+            "Konsultasi Lainnya": "Hubungi Kami"
+        };
+
+        // Navigasi Halaman dengan Fitur Pre-select Paket
         function showPage(pageId, preSelectPaket = '') {
-            // Hide all pages
             document.getElementById('page-home').classList.add('hidden');
             document.getElementById('page-menu').classList.add('hidden');
             document.getElementById('page-contact').classList.add('hidden');
 
-            // Show target page
-            document.getElementById('page-' + pageId).classList.remove('hidden');
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) targetPage.classList.remove('hidden');
 
-            // Update Nav Styling
             const ids = ['home', 'menu', 'contact'];
             ids.forEach(id => {
-                document.getElementById('nav-' + id).classList.remove('active-nav');
-                document.getElementById('m-nav-' + id).classList.remove('mobile-active-nav');
-                document.getElementById('m-nav-' + id).classList.add('text-stone-300');
+                const navBtn = document.getElementById('nav-' + id);
+                const mNavBtn = document.getElementById('m-nav-' + id);
+                
+                if (navBtn) navBtn.classList.remove('active-nav');
+                if (mNavBtn) {
+                    mNavBtn.classList.remove('mobile-active-nav');
+                    mNavBtn.classList.add('text-stone-300');
+                }
             });
 
-            document.getElementById('nav-' + pageId).classList.add('active-nav');
-            document.getElementById('m-nav-' + pageId).classList.add('mobile-active-nav');
-            document.getElementById('m-nav-' + pageId).classList.remove('text-stone-300');
-
-            // Pre-select paket jika ada
-            if (preSelectPaket) {
-                document.getElementById('form-paket').value = preSelectPaket;
+            const activeBtn = document.getElementById('nav-' + pageId);
+            const activeMBtn = document.getElementById('m-nav-' + pageId);
+            
+            if (activeBtn) activeBtn.classList.add('active-nav');
+            if (activeMBtn) {
+                activeMBtn.classList.add('mobile-active-nav');
+                activeMBtn.classList.remove('text-stone-300');
             }
 
-            // Scroll to top
-            window.scrollTo(0, 0);
+            const selectElement = document.getElementById('form-paket');
+            if (selectElement && preSelectPaket) {
+                selectElement.value = preSelectPaket;
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Form Submission ke WhatsApp
+        // Penanganan Formulir Pemesanan (WhatsApp)
         document.getElementById('orderForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -397,9 +415,13 @@
             const pesan = document.getElementById('form-pesan').value;
             const targetPhone = "6285231413408";
             
+            // Ambil harga berdasarkan paket yang dipilih
+            const harga = packagePrices[paket] || "Hubungi Kami";
+            
             const text = `Halo CAKSABAR, saya ingin memesan paket sate/gule:\n\n` +
                          `*Nama:* ${nama || '-'}\n` +
                          `*Pilihan Paket:* ${paket || '-'}\n` +
+                         `*Harga Paket:* ${harga}\n` +
                          `*Nomor WhatsApp:* ${wa || '-'}\n` +
                          `*Pesan Tambahan:* ${pesan || '-'}\n\n` +
                          `Mohon info ketersediaan dan total pembayarannya. Terima kasih.`;
