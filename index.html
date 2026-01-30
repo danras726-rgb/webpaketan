@@ -17,6 +17,58 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        
+        /* ANIMASI BLOB BACKGROUND */
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-blob {
+            animation: morph 8s ease-in-out infinite, float 6s ease-in-out infinite;
+        }
+
+        /* ANIMASI BARU: UAP PANAS (STEAM) - Untuk Home */
+        @keyframes steam-rise {
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            40% { opacity: 0.6; }
+            100% { transform: translateY(-40px) scale(1.5); opacity: 0; }
+        }
+        .steam-particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            filter: blur(8px);
+            animation: steam-rise 3s infinite ease-out;
+            pointer-events: none;
+        }
+
+        /* ANIMASI BARU: API MEMBARA (FIRE) - Untuk Menu */
+        @keyframes flicker-fire {
+            0% { transform: scale(1) rotate(-5deg); opacity: 0.8; color: #f59e0b; /* amber */ }
+            25% { transform: scale(1.1) rotate(0deg); opacity: 1; color: #ef4444; /* red */ }
+            50% { transform: scale(1) rotate(5deg); opacity: 0.8; color: #f59e0b; }
+            75% { transform: scale(1.2) rotate(0deg); opacity: 1; color: #ef4444; }
+            100% { transform: scale(1) rotate(-5deg); opacity: 0.8; color: #f59e0b; }
+        }
+        .animate-fire {
+            animation: flicker-fire 1.5s infinite;
+        }
+
+        /* ANIMASI BARU: MELAYANG SANTAI (FLOATING) - Untuk Kontak */
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        .animate-float-icon {
+            animation: float-gentle 4s ease-in-out infinite;
+        }
+        
         .active-nav { color: #fbbf24; border-bottom: 2px solid #fbbf24; }
         .mobile-active-nav { color: #fbbf24; font-weight: bold; }
         select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
@@ -28,6 +80,7 @@
     <nav class="bg-emerald-900 text-white sticky top-0 z-50 shadow-lg">
         <div class="max-w-6xl mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
             <div class="text-xl md:text-2xl font-serif font-bold tracking-wider cursor-pointer flex items-center gap-2" onclick="showPage('home')">
+                <!-- Icon Sate Statis di Logo -->
                 <i data-lucide="utensils" class="text-amber-400 w-5 h-5 md:w-6 md:h-6"></i>
                 CAKSABAR
             </div>
@@ -64,8 +117,12 @@
     <main class="flex-grow">
         <!-- HOME PAGE -->
         <section id="page-home" class="animate-fade-in pb-20 md:pb-0">
-            <div class="relative bg-stone-100 py-12 md:py-20 lg:py-32">
-                <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10 md:gap-12">
+            <div class="relative bg-stone-100 py-12 md:py-20 lg:py-32 overflow-hidden">
+                <!-- Dekorasi latar belakang -->
+                <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 bg-emerald-200/30 rounded-full blur-3xl"></div>
+
+                <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10 md:gap-12 relative z-10">
                     <div class="w-full md:w-1/2 space-y-5 md:space-y-6 text-center md:text-left order-2 md:order-1">
                         <div class="flex justify-center md:justify-start">
                             <span class="inline-flex items-center gap-2 bg-white border border-emerald-200 text-emerald-800 px-4 py-1.5 rounded-full font-bold text-[10px] md:text-xs tracking-widest shadow-sm uppercase">
@@ -81,8 +138,9 @@
                             Daging empuk, tanpa bau prengus, dengan resep warisan leluhur.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4">
-                            <button onclick="showPage('menu')" class="bg-emerald-800 hover:bg-emerald-900 text-white px-6 md:px-8 py-3.5 md:py-4 rounded-xl text-base md:text-lg font-semibold shadow-lg transition flex items-center justify-center gap-2">
-                                Lihat Paket Pemesanan <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            <button onclick="showPage('menu')" class="bg-emerald-800 hover:bg-emerald-900 text-white px-6 md:px-8 py-3.5 md:py-4 rounded-xl text-base md:text-lg font-semibold shadow-lg transition flex items-center justify-center gap-2 group">
+                                Lihat Paket Pemesanan 
+                                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                             </button>
                             <button onclick="showPage('contact', 'Konsultasi Lainnya')" class="bg-white border-2 border-emerald-800 text-emerald-800 hover:bg-emerald-50 px-6 md:px-8 py-3.5 md:py-4 rounded-xl text-base md:text-lg font-semibold transition">
                                 Konsultasi Gratis
@@ -91,11 +149,23 @@
                     </div>
 
                     <div class="w-full md:w-1/2 flex justify-center order-1 md:order-2">
-                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-amber-100 rounded-full p-4 sm:p-6 md:p-8 shadow-2xl flex items-center justify-center">
-                            <div class="w-full h-full bg-emerald-900 rounded-full flex items-center justify-center overflow-hidden border-4 border-white">
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 flex items-center justify-center">
+                            <!-- Blob Background Animasi -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-amber-200 to-amber-400 opacity-80 animate-blob shadow-2xl" style="border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;"></div>
+                            
+                            <!-- EFEK UAP PANAS (STEAM) - Menandakan Gule Hangat -->
+                            <div class="absolute -top-4 w-10 h-10 steam-particle" style="left: 40%; animation-delay: 0s;"></div>
+                            <div class="absolute -top-8 w-8 h-8 steam-particle" style="left: 55%; animation-delay: 1.5s;"></div>
+                            <div class="absolute -top-2 w-12 h-12 steam-particle" style="left: 48%; animation-delay: 0.8s;"></div>
+
+                            <!-- Gambar Utama -->
+                            <div class="relative w-[90%] h-[90%] bg-emerald-900 rounded-full flex items-center justify-center overflow-hidden border-4 border-white shadow-lg z-10">
                                 <img src="logoku.jpg" alt="Logo CAKSABAR" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/600x600/064e3b/fbbf24?text=Logo+CAKSABAR'">
                             </div>
-                            <div class="absolute -bottom-2 -right-2 bg-amber-400 text-emerald-900 px-4 py-2 rounded-full font-bold text-xs md:text-sm shadow-lg border-2 border-white">
+                            
+                            <!-- Badge Kualitas -->
+                            <div class="absolute -bottom-2 -right-0 md:right-4 bg-white text-emerald-900 px-4 py-2 rounded-full font-bold text-xs md:text-sm shadow-xl border border-emerald-100 z-20 flex items-center gap-2 animate-bounce" style="animation-duration: 3s;">
+                               <i data-lucide="award" class="w-4 h-4 text-amber-500"></i>
                                Kualitas No.1
                             </div>
                         </div>
@@ -108,22 +178,22 @@
                     <h2 class="text-2xl md:text-4xl font-serif font-bold text-stone-800">Mengapa Memilih CAKSABAR?</h2>
                     <div class="w-20 h-1 bg-amber-400 mx-auto mt-4 rounded-full"></div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
-                        <div class="p-8 bg-stone-50 rounded-2xl border border-stone-100 text-center hover:shadow-xl transition-all duration-300">
-                            <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-3">
+                        <div class="p-8 bg-stone-50 rounded-2xl border border-stone-100 text-center hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-12 transition-transform duration-300">
                                 <i data-lucide="check-circle" class="text-emerald-700 w-8 h-8"></i>
                             </div>
                             <h3 class="text-xl font-bold text-stone-800 mb-3">Sesuai Syariat</h3>
                             <p class="text-stone-600 text-sm leading-relaxed">Proses penyembelihan dan pengolahan dijamin Halal dan sesuai tuntunan syariat Islam.</p>
                         </div>
-                        <div class="p-8 bg-stone-50 rounded-2xl border border-stone-100 text-center hover:shadow-xl transition-all duration-300">
-                            <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-3">
+                        <div class="p-8 bg-stone-50 rounded-2xl border border-stone-100 text-center hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-12 transition-transform duration-300">
                                 <i data-lucide="star" class="text-emerald-700 w-8 h-8"></i>
                             </div>
                             <h3 class="text-xl font-bold text-stone-800 mb-3">Kualitas Premium</h3>
                             <p class="text-stone-600 text-sm leading-relaxed">Menggunakan kambing muda pilihan. Daging empuk, bumbu meresap, dan tidak bau prengus.</p>
                         </div>
-                        <div class="p-8 bg-stone-50 rounded-2xl border border-stone-100 text-center hover:shadow-xl transition-all duration-300">
-                            <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-3">
+                        <div class="p-8 bg-stone-50 rounded-2xl border border-stone-100 text-center hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-12 transition-transform duration-300">
                                 <i data-lucide="calendar" class="text-emerald-700 w-8 h-8"></i>
                             </div>
                             <h3 class="text-xl font-bold text-stone-800 mb-3">Tepat Waktu</h3>
@@ -138,15 +208,25 @@
         <section id="page-menu" class="hidden animate-fade-in py-12 md:py-20 bg-stone-50 min-h-screen pb-24 md:pb-12">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="text-center mb-12 md:mb-16">
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-emerald-900 mb-4">Pilihan Paket Ekoran</h2>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-emerald-900 mb-4 flex items-center justify-center gap-3">
+                        <!-- EFEK API MEMBARA - Kiri Kanan Judul -->
+                        <i data-lucide="flame" class="w-8 h-8 md:w-10 md:h-10 animate-fire"></i>
+                        Pilihan Paket Ekoran
+                        <i data-lucide="flame" class="w-8 h-8 md:w-10 md:h-10 animate-fire"></i>
+                    </h2>
                     <p class="text-base md:text-lg text-stone-600 max-w-2xl mx-auto">
                         Praktis, Hemat, dan Berkah. Kami urus semuanya mulai dari penyembelihan hingga pengantaran ke depan pintu Anda.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 relative">
+                    <!-- Dekorasi Background Sate Melayang -->
+                    <div class="absolute -top-10 -left-10 text-amber-200 hidden lg:block animate-float-icon">
+                        <i data-lucide="utensils-crossed" class="w-32 h-32 opacity-20"></i>
+                    </div>
+
                     <!-- Paket Hemat -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-200 flex flex-col transition-all hover:shadow-2xl">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-200 flex flex-col transition-all hover:shadow-2xl hover:-translate-y-1 relative z-10">
                         <div class="p-6 md:p-8 flex-grow">
                             <h3 class="text-xl md:text-2xl font-bold text-stone-800 mb-2">Paket Hemat</h3>
                             <div class="text-2xl md:text-3xl font-bold text-emerald-700 mb-6">Rp 2.250.000</div>
@@ -160,8 +240,10 @@
                         <div class="p-6 bg-stone-50 border-t"><button onclick="showPage('contact', 'Paket Hemat')" class="w-full py-3 rounded-xl border-2 border-emerald-800 text-emerald-800 font-bold text-sm hover:bg-emerald-50 transition-colors">Pesan Paket Ini</button></div>
                     </div>
                     <!-- Paket Sedang -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-amber-400 ring-2 ring-amber-100 flex flex-col transition-all hover:shadow-2xl">
-                        <div class="bg-amber-400 text-emerald-900 text-center py-2 font-bold text-[10px] uppercase tracking-widest">Paling Laris</div>
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-amber-400 ring-2 ring-amber-100 flex flex-col transition-all hover:shadow-2xl hover:-translate-y-1 relative z-10 transform md:-mt-4">
+                        <div class="bg-amber-400 text-emerald-900 text-center py-2 font-bold text-[10px] uppercase tracking-widest flex justify-center items-center gap-2">
+                            <i data-lucide="flame" class="w-3 h-3 animate-fire"></i> Paling Laris <i data-lucide="flame" class="w-3 h-3 animate-fire"></i>
+                        </div>
                         <div class="p-6 md:p-8 flex-grow">
                             <h3 class="text-xl md:text-2xl font-bold text-stone-800 mb-2">Paket Sedang</h3>
                             <div class="text-2xl md:text-3xl font-bold text-emerald-700 mb-6">Rp 2.500.000</div>
@@ -175,7 +257,7 @@
                         <div class="p-6 bg-stone-50 border-t"><button onclick="showPage('contact', 'Paket Sedang')" class="w-full py-3 rounded-xl bg-emerald-800 text-white font-bold text-sm hover:bg-emerald-900 shadow-md transition-colors">Pesan Sekarang</button></div>
                     </div>
                     <!-- Paket Besar -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-200 flex flex-col transition-all hover:shadow-2xl">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-200 flex flex-col transition-all hover:shadow-2xl hover:-translate-y-1 relative z-10">
                         <div class="p-6 md:p-8 flex-grow">
                             <h3 class="text-xl md:text-2xl font-bold text-stone-800 mb-2">Paket Besar</h3>
                             <div class="text-2xl md:text-3xl font-bold text-emerald-700 mb-6">Rp 3.000.000</div>
@@ -189,7 +271,7 @@
                         <div class="p-6 bg-stone-50 border-t"><button onclick="showPage('contact', 'Paket Besar')" class="w-full py-3 rounded-xl border-2 border-emerald-800 text-emerald-800 font-bold text-sm hover:bg-emerald-50 transition-colors">Pesan Paket Ini</button></div>
                     </div>
                     <!-- Paket Jasa Masak -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-200 flex flex-col transition-all hover:shadow-2xl">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-200 flex flex-col transition-all hover:shadow-2xl hover:-translate-y-1 relative z-10">
                         <div class="p-6 md:p-8 flex-grow">
                             <h3 class="text-xl md:text-2xl font-bold text-stone-800 mb-2">Paket Jasa Masak</h3>
                             <div class="text-2xl md:text-3xl font-bold text-emerald-700 mb-6">Rp 850.000</div>
@@ -208,8 +290,8 @@
                 <div class="max-w-6xl mx-auto mb-16 md:mb-20">
                     <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-amber-200 flex flex-col lg:flex-row items-stretch">
                         <!-- Kotakan Image -->
-                        <div class="lg:w-1/2 bg-stone-200 min-h-[300px] relative overflow-hidden">
-                            <img src="fotokotakan.jpg" alt="Paket Kotakan CAKSABAR" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/800x600/e5e7eb/78716c?text=Foto+Paket+Kotakan'">
+                        <div class="lg:w-1/2 bg-stone-200 min-h-[300px] relative overflow-hidden group">
+                            <img src="fotokotakan.jpg" alt="Paket Kotakan CAKSABAR" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/800x600/e5e7eb/78716c?text=Foto+Paket+Kotakan'">
                             <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent"></div>
                             <div class="absolute bottom-6 left-6">
                                 <span class="bg-amber-400 text-emerald-900 px-4 py-1.5 rounded-full font-bold text-sm shadow-lg uppercase tracking-wider">Layanan Ekstra</span>
@@ -240,8 +322,8 @@
                                 </div>
                             </div>
 
-                            <button onclick="showPage('contact', 'Layanan Kotakan')" class="bg-emerald-800 hover:bg-emerald-900 text-white font-bold py-4 rounded-2xl transition-all shadow-lg flex items-center justify-center gap-3">
-                                Tanya Info Kotakan <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            <button onclick="showPage('contact', 'Layanan Kotakan')" class="bg-emerald-800 hover:bg-emerald-900 text-white font-bold py-4 rounded-2xl transition-all shadow-lg flex items-center justify-center gap-3 group">
+                                Tanya Info Kotakan <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                             </button>
                         </div>
                     </div>
@@ -251,7 +333,7 @@
                 <div class="max-w-4xl mx-auto mb-20">
                     <div class="bg-emerald-50 border-2 border-emerald-100 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col md:flex-row items-center gap-6">
                         <div class="w-16 h-16 bg-emerald-800 rounded-full flex items-center justify-center shrink-0 shadow-lg">
-                            <i data-lucide="info" class="text-amber-400 w-8 h-8"></i>
+                            <i data-lucide="soup" class="text-amber-400 w-8 h-8"></i>
                         </div>
                         <div class="text-center md:text-left">
                             <h4 class="text-xl font-bold text-emerald-900 mb-2 uppercase tracking-wide">Informasi Kapasitas Gule</h4>
@@ -270,10 +352,10 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-md border-l-[8px] border-emerald-800 flex flex-col justify-between transition-all hover:shadow-xl">
+                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-md border-l-[8px] border-emerald-800 flex flex-col justify-between transition-all hover:shadow-xl group">
                         <div>
                             <div class="flex justify-between items-start mb-4">
-                               <h3 class="text-xl md:text-2xl font-bold text-stone-800">Jasa Masak Kambing Guling</h3>
+                               <h3 class="text-xl md:text-2xl font-bold text-stone-800 group-hover:text-emerald-800 transition-colors">Jasa Masak Kambing Guling</h3>
                                <div class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Kambing Sendiri</div>
                             </div>
                             <p class="text-stone-600 mb-6 text-sm leading-relaxed text-center md:text-left">Kambing dari Anda kami bakar matang dari dapur, lalu dibawa utuh ke lokasi. Tim kami melayani pengirisan di acara. Termasuk kecap khusus, acar, dan sambal.</p>
@@ -283,10 +365,10 @@
                             <button onclick="showPage('contact', 'Jasa Masak Kambing Guling')" class="w-full sm:w-auto bg-emerald-800 text-white px-8 py-2.5 rounded-xl text-sm font-bold shadow-md hover:bg-emerald-900 transition-colors">Tanya Detail</button>
                         </div>
                     </div>
-                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-md border-l-[8px] border-emerald-800 flex flex-col justify-between transition-all hover:shadow-xl">
+                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-md border-l-[8px] border-emerald-800 flex flex-col justify-between transition-all hover:shadow-xl group">
                         <div>
                             <div class="flex justify-between items-start mb-4">
-                               <h3 class="text-xl md:text-2xl font-bold text-stone-800">Kambing Guling (Dari Kami)</h3>
+                               <h3 class="text-xl md:text-2xl font-bold text-stone-800 group-hover:text-emerald-800 transition-colors">Kambing Guling (Dari Kami)</h3>
                                <div class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Kambing Dari Kami</div>
                             </div>
                             <p class="text-stone-600 mb-6 text-sm leading-relaxed text-center md:text-left">Kambing pilihan dari kami yang dibakar matang dari dapur, lalu dibawa utuh ke lokasi. Tim kami melayani pengirisan di acara. Termasuk kecap khusus, acar, dan sambal.</p>
@@ -301,8 +383,17 @@
         </section>
 
         <!-- CONTACT PAGE -->
-        <section id="page-contact" class="hidden animate-fade-in bg-stone-50 min-h-screen py-8 md:py-16 pb-28 md:pb-16">
-            <div class="max-w-5xl mx-auto px-4">
+        <section id="page-contact" class="hidden animate-fade-in bg-stone-50 min-h-screen py-8 md:py-16 pb-28 md:pb-16 relative">
+            
+            <!-- EFEK FLOATING UTENSILS - Background -->
+            <div class="absolute top-20 right-10 text-emerald-200 animate-float-icon hidden lg:block" style="animation-delay: 1s;">
+                 <i data-lucide="utensils" class="w-24 h-24 opacity-30"></i>
+            </div>
+             <div class="absolute bottom-40 left-10 text-amber-200 animate-float-icon hidden lg:block" style="animation-delay: 2s;">
+                 <i data-lucide="chef-hat" class="w-24 h-24 opacity-30"></i>
+            </div>
+
+            <div class="max-w-5xl mx-auto px-4 relative z-10">
                 <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-stone-100">
                     <div class="grid grid-cols-1 lg:grid-cols-5">
                         <!-- Sidebar Info -->
