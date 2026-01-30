@@ -144,7 +144,7 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                     <!-- Paket Hemat -->
                     <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-200 flex flex-col transition-all hover:shadow-2xl">
                         <div class="p-6 md:p-8 flex-grow">
@@ -154,7 +154,7 @@
                                 <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> 1 Ekor Kambing</li>
                                 <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> Minimal 400 Tusuk Sate</li>
                                 <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> 1 Panci Gule</li>
-                                <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> Acar & Sambal</li>
+                                <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> Acar, Sambal & Bumbu</li>
                             </ul>
                         </div>
                         <div class="p-6 bg-stone-50 border-t"><button onclick="showPage('contact', 'Paket Hemat')" class="w-full py-3 rounded-xl border-2 border-emerald-800 text-emerald-800 font-bold text-sm hover:bg-emerald-50 transition-colors">Pesan Paket Ini</button></div>
@@ -196,16 +196,74 @@
                             <ul class="space-y-3">
                                 <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> Kambing Bawa Sendiri</li>
                                 <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> Porsi Tergantung Kambing</li>
-                                <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> Termasuk Acar & Sambal</li>
-                                <li class="flex items-start gap-3 text-stone-600 text-xs text-stone-400 italic"><i data-lucide="info" class="w-3 h-3 mt-0.5"></i> Ada biaya tambahan jika > 700 sate</li>
+                                <li class="flex items-start gap-3 text-stone-600 text-sm"><i data-lucide="check-circle" class="text-emerald-500 w-4 h-4 mt-0.5"></i> Acar, Sambal & Bumbu</li>
+                                <li class="flex items-start gap-3 text-stone-600 text-xs text-stone-400 italic"><i data-lucide="info" class="w-3 h-3 mt-0.5"></i> Ada biaya tambahan jika jadi lebih dari 700 tusuk sate</li>
                             </ul>
                         </div>
                         <div class="p-6 bg-stone-50 border-t"><button onclick="showPage('contact', 'Paket Jasa Masak')" class="w-full py-3 rounded-xl border-2 border-emerald-800 text-emerald-800 font-bold text-sm hover:bg-emerald-50 transition-colors">Tanya Jasa Masak</button></div>
                     </div>
                 </div>
 
+                <!-- LAYANAN KOTAKAN SECTION -->
+                <div class="max-w-6xl mx-auto mb-16 md:mb-20">
+                    <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-amber-200 flex flex-col lg:flex-row items-stretch">
+                        <!-- Kotakan Image -->
+                        <div class="lg:w-1/2 bg-stone-200 min-h-[300px] relative overflow-hidden">
+                            <img src="fotokotakan.jpg" alt="Paket Kotakan CAKSABAR" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/800x600/e5e7eb/78716c?text=Foto+Paket+Kotakan'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <span class="bg-amber-400 text-emerald-900 px-4 py-1.5 rounded-full font-bold text-sm shadow-lg uppercase tracking-wider">Layanan Ekstra</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Kotakan Details -->
+                        <div class="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                            <h3 class="text-3xl font-serif font-bold text-emerald-900 mb-4 tracking-tight">Upgrade ke Paket Kotakan</h3>
+                            <p class="text-stone-600 mb-8 leading-relaxed">
+                                Jika berminat menjadikan hasil olahan sate dan gule ekoran Anda dalam bentuk <span class="font-bold text-emerald-800">Kotakan</span> yang siap dibagikan, kami menyediakan layanan pengemasan lengkap.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                <div class="bg-stone-50 p-4 rounded-2xl border border-stone-100">
+                                    <p class="text-xs text-stone-400 uppercase font-bold tracking-widest mb-1">Biaya Tambahan</p>
+                                    <p class="text-2xl font-bold text-emerald-700">Rp 10.000 <span class="text-xs text-stone-500">/ kotak</span></p>
+                                </div>
+                                <div class="space-y-2">
+                                    <p class="text-xs text-stone-500 uppercase font-bold tracking-widest mb-2">Isi Paket Kotak:</p>
+                                    <div class="flex flex-wrap gap-2 text-xs">
+                                        <span class="bg-white border border-stone-200 px-3 py-1 rounded-full font-medium shadow-sm">Sate</span>
+                                        <span class="bg-white border border-stone-200 px-3 py-1 rounded-full font-medium shadow-sm">Gule (Wadah Cepuk)</span>
+                                        <span class="bg-white border border-stone-200 px-3 py-1 rounded-full font-medium shadow-sm">Acar</span>
+                                        <span class="bg-white border border-stone-200 px-3 py-1 rounded-full font-medium shadow-sm">Kerupuk</span>
+                                        <span class="bg-white border border-stone-200 px-3 py-1 rounded-full font-medium shadow-sm">Nasi Putih</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button onclick="showPage('contact', 'Layanan Kotakan')" class="bg-emerald-800 hover:bg-emerald-900 text-white font-bold py-4 rounded-2xl transition-all shadow-lg flex items-center justify-center gap-3">
+                                Tanya Info Kotakan <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INFO KAPASITAS GULE -->
+                <div class="max-w-4xl mx-auto mb-20">
+                    <div class="bg-emerald-50 border-2 border-emerald-100 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col md:flex-row items-center gap-6">
+                        <div class="w-16 h-16 bg-emerald-800 rounded-full flex items-center justify-center shrink-0 shadow-lg">
+                            <i data-lucide="info" class="text-amber-400 w-8 h-8"></i>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h4 class="text-xl font-bold text-emerald-900 mb-2 uppercase tracking-wide">Informasi Kapasitas Gule</h4>
+                            <p class="text-stone-700 leading-relaxed text-sm md:text-base">
+                                Untuk paket ekoran, <span class="font-bold text-emerald-800">1 Panci Gule</span> dapat disajikan untuk sekitar <span class="bg-amber-100 px-1 font-bold">100 - 120 porsi</span> <span class="font-bold">makan jalan</span>. Jika dikemas dalam wadah kotak (kotakan), <span class="font-bold text-emerald-800">1 panci</span> gule tersebut cukup untuk <span class="bg-amber-100 px-1 font-bold">80 - 100 wadah</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="text-center mb-10 md:mb-12">
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-emerald-900 mb-4 text-center">Paket Kambing Guling</h2>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-emerald-900 mb-4">Paket Kambing Guling</h2>
                     <p class="text-base md:text-lg text-stone-600 max-w-3xl mx-auto leading-relaxed text-center">
                         Hadirkan kemewahan dalam setiap perayaan dengan sajian eksklusif yang tidak tersedia dalam porsi satuan. 
                     </p>
@@ -313,15 +371,12 @@
                                             <option value="Paket Sedang">Paket Sedang</option>
                                             <option value="Paket Besar">Paket Besar</option>
                                             <option value="Paket Jasa Masak">Paket Jasa Masak</option>
+                                            <option value="Layanan Kotakan">Layanan Kotakan</option>
                                             <option value="Jasa Masak Kambing Guling">Jasa Masak Kambing Guling</option>
                                             <option value="Kambing Guling (Dari Kami)">Kambing Guling (Dari Kami)</option>
                                             <option value="Konsultasi Lainnya">Konsultasi Lainnya</option>
                                         </select>
                                     </div>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-stone-500 uppercase tracking-widest mb-2">Nomor WhatsApp Aktif</label>
-                                    <input type="tel" id="form-wa" class="w-full bg-stone-50 border-2 border-stone-200 rounded-xl p-3.5 focus:outline-none focus:border-emerald-600 text-stone-800" placeholder="08123xxxx" required>
                                 </div>
                                 <div>
                                     <label class="block text-xs font-bold text-stone-500 uppercase tracking-widest mb-2">Pesan / Detail Acara</label>
@@ -362,6 +417,7 @@
             "Paket Sedang": "Rp 2.500.000",
             "Paket Besar": "Rp 3.000.000",
             "Paket Jasa Masak": "Rp 850.000",
+            "Layanan Kotakan": "Rp 10.000 / kotak",
             "Jasa Masak Kambing Guling": "Rp 1.200.000",
             "Kambing Guling (Dari Kami)": "Rp 2.500.000",
             "Konsultasi Lainnya": "Hubungi Kami"
@@ -411,7 +467,6 @@
             
             const nama = document.getElementById('form-nama').value;
             const paket = document.getElementById('form-paket').value;
-            const wa = document.getElementById('form-wa').value;
             const pesan = document.getElementById('form-pesan').value;
             const targetPhone = "6285231413408";
             
@@ -422,7 +477,6 @@
                          `*Nama:* ${nama || '-'}\n` +
                          `*Pilihan Paket:* ${paket || '-'}\n` +
                          `*Harga Paket:* ${harga}\n` +
-                         `*Nomor WhatsApp:* ${wa || '-'}\n` +
                          `*Pesan Tambahan:* ${pesan || '-'}\n\n` +
                          `Mohon info ketersediaan dan total pembayarannya. Terima kasih.`;
             
