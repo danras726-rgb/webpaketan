@@ -1,0 +1,813 @@
+/* ==========================================================================
+   CAKSABAR — Sate & Gule Lumajang
+   Stylesheet utama (animasi, komponen, dan aksen kuliner)
+   ========================================================================== */
+
+:root {
+    --forest-900: #04331f;
+    --forest-800: #064e3b;
+    --forest-700: #05714c;
+    --saffron-400: #fbbf24;
+    --saffron-500: #f59e0b;
+    --chili-500: #ef4444;
+    --cream: #fffbf4;
+    --ink: #2b211a;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input,
+textarea,
+select {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Figtree', 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+.font-display {
+    font-family: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    font-weight: 650;
+}
+
+::selection {
+    background: transparent;
+    color: inherit;
+}
+
+input::selection,
+textarea::selection {
+    background: var(--saffron-400);
+    color: var(--forest-900);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f3ece1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--forest-700), var(--forest-900));
+    border-radius: 99px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2305714c' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.75rem;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ==========================================================================
+   1. Latar bertekstur & aksen warna
+   ========================================================================== */
+
+.bg-spice {
+    background-color: var(--cream);
+    background-image:
+        radial-gradient(circle at 12% 18%, rgba(251, 191, 36, 0.18), transparent 42%),
+        radial-gradient(circle at 88% 12%, rgba(16, 185, 129, 0.16), transparent 40%),
+        radial-gradient(circle at 70% 88%, rgba(239, 68, 68, 0.12), transparent 45%);
+}
+
+.bg-grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+.text-gradient-fire {
+    background: linear-gradient(100deg, #f59e0b, #ef4444 45%, #f59e0b 80%);
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-pan 6s linear infinite;
+}
+
+.text-gradient-leaf {
+    background: linear-gradient(100deg, #05714c, #10b981 50%, #05714c);
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-pan 7s linear infinite;
+}
+
+@keyframes gradient-pan {
+    to {
+        background-position: 220% center;
+    }
+}
+
+.glass {
+    background: rgba(4, 51, 31, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+/* ==========================================================================
+   2. Navigasi
+   ========================================================================== */
+
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.25s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--saffron-400), var(--chili-500));
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+    width: 100%;
+}
+
+.nav-link.is-active {
+    color: var(--saffron-400);
+}
+
+.mnav-item {
+    position: relative;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.mnav-item.is-active {
+    color: var(--saffron-400);
+    transform: translateY(-3px);
+}
+
+.mnav-item.is-active::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 3px;
+    border-radius: 99px;
+    background: var(--saffron-400);
+}
+
+/* ==========================================================================
+   3. Tombol
+   ========================================================================== */
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-primary {
+    background: linear-gradient(120deg, var(--forest-800), var(--forest-700));
+    color: #fff;
+    box-shadow: 0 14px 30px -12px rgba(5, 113, 76, 0.75);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 40px -14px rgba(5, 113, 76, 0.85);
+}
+
+.btn-gold {
+    background: linear-gradient(120deg, var(--saffron-400), var(--saffron-500));
+    color: var(--forest-900);
+    box-shadow: 0 14px 30px -12px rgba(245, 158, 11, 0.8);
+}
+
+.btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 40px -14px rgba(245, 158, 11, 0.9);
+}
+
+.btn-outline {
+    border: 2px solid var(--forest-800);
+    color: var(--forest-800);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.btn-outline:hover {
+    background: var(--forest-800);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Kilau melintas saat hover */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transform: skewX(-20deg);
+}
+
+.btn:hover::before {
+    animation: shine 0.9s ease;
+}
+
+@keyframes shine {
+    to {
+        left: 140%;
+    }
+}
+
+/* ==========================================================================
+   4. Kartu
+   ========================================================================== */
+
+.card {
+    position: relative;
+    background: #fff;
+    border-radius: 1.75rem;
+    border: 1px solid rgba(4, 51, 31, 0.08);
+    box-shadow: 0 18px 40px -28px rgba(4, 51, 31, 0.55);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 34px 60px -30px rgba(4, 51, 31, 0.6);
+}
+
+.card-featured {
+    border-color: var(--saffron-400);
+    box-shadow: 0 24px 50px -26px rgba(245, 158, 11, 0.7);
+}
+
+/* Garis pelangi rempah di tepi atas kartu */
+.card-ribbon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 8%;
+    right: 8%;
+    height: 4px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #10b981, #fbbf24, #ef4444);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.45s ease;
+}
+
+.card-ribbon:hover::before,
+.card-featured.card-ribbon::before {
+    transform: scaleX(1);
+}
+
+.feature-icon {
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .feature-icon {
+    transform: rotate(-10deg) scale(1.12);
+}
+
+/* ==========================================================================
+   5. Animasi masuk (scroll reveal)
+   ========================================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.reveal-left {
+    transform: translateX(-36px);
+}
+
+.reveal-right {
+    transform: translateX(36px);
+}
+
+.reveal-zoom {
+    transform: scale(0.92);
+}
+
+.fade-up {
+    animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ==========================================================================
+   6. Animasi khas kuliner
+   ========================================================================== */
+
+/* Blob adonan yang bergerak */
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+@keyframes float-y {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-16px);
+    }
+}
+
+.animate-blob {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: morph 9s ease-in-out infinite, float-y 6s ease-in-out infinite;
+}
+
+/* Uap panas dari gule */
+@keyframes steam-rise {
+    0% {
+        transform: translateY(0) scale(0.9);
+        opacity: 0;
+    }
+    35% {
+        opacity: 0.65;
+    }
+    100% {
+        transform: translateY(-64px) scale(1.7);
+        opacity: 0;
+    }
+}
+
+.steam {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.75);
+    filter: blur(9px);
+    animation: steam-rise 3.4s ease-out infinite;
+    pointer-events: none;
+}
+
+/* Bara api pemanggangan */
+@keyframes flicker {
+    0% {
+        transform: scale(1) rotate(-5deg);
+        opacity: 0.85;
+        color: #f59e0b;
+    }
+    25% {
+        transform: scale(1.14) rotate(2deg);
+        opacity: 1;
+        color: #ef4444;
+    }
+    50% {
+        transform: scale(0.98) rotate(5deg);
+        opacity: 0.85;
+        color: #f59e0b;
+    }
+    75% {
+        transform: scale(1.18) rotate(-2deg);
+        opacity: 1;
+        color: #f97316;
+    }
+    100% {
+        transform: scale(1) rotate(-5deg);
+        opacity: 0.85;
+        color: #f59e0b;
+    }
+}
+
+.animate-flame {
+    animation: flicker 1.6s infinite;
+}
+
+/* Ikon rempah melayang di latar */
+@keyframes drift {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate3d(14px, -18px, 0) rotate(8deg);
+    }
+    66% {
+        transform: translate3d(-12px, -8px, 0) rotate(-6deg);
+    }
+}
+
+.animate-drift {
+    animation: drift 12s ease-in-out infinite;
+}
+
+.animate-float {
+    animation: float-y 5s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+    animation: spin 22s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Denyut lingkaran pada tombol WhatsApp */
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.85);
+        opacity: 0.7;
+    }
+    80%, 100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+.pulse-ring::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: rgba(37, 211, 102, 0.55);
+    animation: pulse-ring 2.4s cubic-bezier(0.21, 0.61, 0.35, 1) infinite;
+    z-index: -1;
+}
+
+/* Pita berjalan */
+.marquee {
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee__track {
+    display: flex;
+    width: max-content;
+    animation: marquee 26s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Garis bawah judul yang tumbuh */
+.title-rule {
+    display: block;
+    height: 4px;
+    width: 0;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #10b981, #fbbf24, #ef4444);
+    transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+
+.reveal.is-visible .title-rule,
+.title-rule.is-visible {
+    width: 92px;
+}
+
+/* Efek getar ringan untuk lencana */
+@keyframes wobble {
+    0%, 100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+.animate-wobble {
+    animation: wobble 3.2s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   7. Formulir
+   ========================================================================== */
+
+.field {
+    width: 100%;
+    border-radius: 1rem;
+    border: 2px solid #e7ddcd;
+    background: #fffdf9;
+    padding: 0.9rem 1rem;
+    color: var(--ink);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.field:focus {
+    outline: none;
+    border-color: var(--forest-700);
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.16);
+    transform: translateY(-2px);
+}
+
+.field::placeholder {
+    color: #b3a595;
+}
+
+.field-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8a7a68;
+    margin-bottom: 0.5rem;
+}
+
+/* Total yang berubah diberi efek denyut */
+@keyframes bump {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(1.07);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-bump {
+    animation: bump 0.45s ease;
+}
+
+/* ==========================================================================
+   8. Aksen kuliner tambahan
+   ========================================================================== */
+
+.hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    animation: glow-pulse 8s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        opacity: 0.55;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.12);
+    }
+}
+
+.spice-flake {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: flake-drift 16s linear infinite;
+}
+
+@keyframes flake-drift {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    12% {
+        opacity: 0.85;
+    }
+    100% {
+        transform: translate3d(40px, -120px, 0) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+.skewer-rule {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.skewer-rule::before,
+.skewer-rule::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #f59e0b, #ef4444, #10b981, transparent);
+    border-radius: 99px;
+}
+
+.page-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.wa-fab {
+    position: fixed;
+    right: 1.1rem;
+    bottom: 5.5rem;
+    z-index: 70;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #25d366, #128c7e);
+    color: #fff;
+    box-shadow: 0 16px 32px -12px rgba(18, 140, 126, 0.9);
+    transition: transform 0.25s ease;
+}
+
+.wa-fab:hover {
+    transform: scale(1.08) rotate(-8deg);
+}
+
+@media (min-width: 768px) {
+    .wa-fab {
+        bottom: 1.6rem;
+        right: 1.6rem;
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+.estimate-card {
+    background: linear-gradient(180deg, #fffdf8, #fff7e8);
+    border: 2px dashed rgba(245, 158, 11, 0.45);
+    border-radius: 1.5rem;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    background: #fff;
+    border: 1px solid #eadfce;
+    box-shadow: 0 6px 16px -12px rgba(43, 33, 26, 0.5);
+}
+
+.logo-ring {
+    position: absolute;
+    inset: -10%;
+    border: 2px dashed rgba(251, 191, 36, 0.55);
+    border-radius: 50%;
+    animation: spin 28s linear infinite;
+}
+
+.toggle-track {
+    width: 2.75rem;
+    height: 1.5rem;
+    background: #d6cbb8;
+    border-radius: 999px;
+    position: relative;
+    transition: background 0.25s ease;
+}
+
+.toggle-track::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: #fff;
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(43, 33, 26, 0.18);
+    transition: transform 0.25s ease;
+}
+
+input:checked + .toggle-track {
+    background: var(--forest-700);
+}
+
+input:checked + .toggle-track::after {
+    transform: translateX(1.25rem);
+}
+
+.nav-cta {
+    animation: cta-glow 2.8s ease-in-out infinite;
+}
+
+@keyframes cta-glow {
+    0%, 100% {
+        box-shadow: 0 8px 18px -10px rgba(251, 191, 36, 0.7);
+    }
+    50% {
+        box-shadow: 0 12px 28px -8px rgba(251, 191, 36, 1);
+    }
+}
+
+.orbit-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    animation: orbit 10s linear infinite;
+}
+
+@keyframes orbit {
+    to {
+        transform: rotate(360deg) translateX(var(--orbit-r, 150px)) rotate(-360deg);
+    }
+}
+
+/* ==========================================================================
+   9. Aksesibilitas gerak
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
