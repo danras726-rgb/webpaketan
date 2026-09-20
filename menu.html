@@ -2,56 +2,53 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Paket & Menu — CAKSABAR Lumajang</title>
     <meta name="description" content="Paket ekoran, kotakan, dan kambing guling CAKSABAR. Harga kotakan Rp 12.000 per box, tersinkron dengan pemesanan WhatsApp.">
     <link rel="icon" href="logoku.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/tailwind.config.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="menu" class="bg-spice min-h-screen flex flex-col text-clay">
     <header id="site-header" class="glass text-white sticky top-0 z-50 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2.5 group">
-                <img src="logoku.jpg" alt="Logo CAKSABAR" class="w-9 h-9 md:w-11 md:h-11 rounded-full object-cover ring-2 ring-saffron-400 group-hover:rotate-6 transition-transform">
-                <span class="font-display text-xl md:text-2xl tracking-[0.12em]">CAKSABAR</span>
+        <div class="max-w-6xl mx-auto px-5 md:px-8 py-4 md:py-5 flex justify-between items-center gap-6">
+            <a href="index.html" class="flex items-center gap-3 group shrink-0">
+                <img src="logoku.jpg" alt="Logo CAKSABAR" class="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover ring-1 ring-saffron-400/80">
+                <span class="font-display text-xl md:text-[1.55rem] tracking-[0.08em]">CAKSABAR</span>
             </a>
-            <nav class="hidden md:flex items-center gap-8 text-[15px] font-semibold">
-                <a href="index.html" data-nav="home" class="nav-link text-white/80 hover:text-saffron-400">Beranda</a>
-                <a href="menu.html" data-nav="menu" class="nav-link text-white/80 hover:text-saffron-400">Paket & Menu</a>
-                <a href="pesan.html" data-nav="contact" class="nav-link text-white/80 hover:text-saffron-400">Pemesanan</a>
-                <a href="pesan.html" class="btn btn-gold nav-cta px-5 py-2.5 text-sm">Pesan Sekarang</a>
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="index.html" data-nav="home" class="nav-link text-white/70 hover:text-saffron-400">Beranda</a>
+                <a href="menu.html" data-nav="menu" class="nav-link text-white/70 hover:text-saffron-400">Paket &amp; Menu</a>
+                <a href="pesan.html" data-nav="contact" class="nav-link text-white/70 hover:text-saffron-400">Pemesanan</a>
+                <a href="pesan.html" class="btn btn-gold px-6 py-2.5">Pesan Sekarang</a>
             </nav>
-            <a href="pesan.html" class="md:hidden btn btn-gold nav-cta px-3 py-1.5 text-xs">Pesan Sekarang</a>
         </div>
     </header>
 
-    <main class="flex-grow pb-24 md:pb-0">
-        <section class="page-hero py-12 md:py-20 min-h-screen relative" data-spice="8">
-            <i data-lucide="utensils-crossed" class="absolute -top-4 -left-6 w-32 h-32 text-saffron-200/70 animate-float hidden lg:block"></i>
-            <div class="max-w-6xl mx-auto px-4 relative z-10">
-                <div class="text-center mb-12 md:mb-16 reveal">
-                    <h1 class="font-display text-3xl md:text-5xl font-bold text-clay mb-4 flex items-center justify-center gap-3 px-8">
-                        <i data-lucide="flame" class="w-8 h-8 md:w-10 md:h-10 animate-flame"></i>
+    <main class="flex-grow pb-28 md:pb-0">
+        <section class="page-hero py-12 md:py-24 min-h-screen relative">
+            <div class="max-w-6xl mx-auto px-5 md:px-8 relative z-10">
+                <div class="text-center mb-14 md:mb-16 reveal">
+                    <p class="kicker justify-center mb-5">Paket Katering</p>
+                    <h1 class="font-display text-4xl md:text-6xl text-cream mb-5">
                         Pilihan Paket Ekoran
-                        <i data-lucide="flame" class="w-8 h-8 md:w-10 md:h-10 animate-flame"></i>
                     </h1>
-                    <p class="text-base md:text-lg text-taupe max-w-2xl mx-auto">
+                    <p class="text-base md:text-lg text-cream/65 max-w-2xl mx-auto font-light">
                         Praktis, hemat, dan berkah. Kami urus semuanya mulai dari penyembelihan hingga pengantaran ke depan pintu Anda.
                     </p>
-                    <span class="title-rule mx-auto mt-5"></span>
+                    <span class="title-rule mx-auto mt-6"></span>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
                     <article class="card card-ribbon flex flex-col reveal">
                         <div class="p-6 md:p-8 flex-grow">
-                            <h2 class="text-xl md:text-2xl font-bold mb-1">Paket Hemat</h2>
+                            <h2 class="font-display text-2xl md:text-3xl mb-1">Paket Hemat</h2>
                             <p class="text-xs text-taupe mb-4">Pas untuk syukuran keluarga</p>
-                            <p class="text-2xl md:text-3xl font-display font-bold text-forest-700 mb-6" data-price="hemat">Rp 2.250.000</p>
+                            <p class="text-2xl md:text-3xl font-display text-saffron-600 mb-6" data-price="hemat">Rp 2.250.000</p>
                             <ul class="space-y-3 text-sm text-taupe">
                                 <li class="flex gap-2"><i data-lucide="check-circle" class="text-forest-500 w-4 h-4 mt-0.5"></i> 1 Ekor Kambing</li>
                                 <li class="flex gap-2"><i data-lucide="check-circle" class="text-forest-500 w-4 h-4 mt-0.5"></i> Minimal 400 Tusuk Sate</li>
@@ -59,17 +56,17 @@
                                 <li class="flex gap-2"><i data-lucide="check-circle" class="text-forest-500 w-4 h-4 mt-0.5"></i> Acar, Sambal & Bumbu</li>
                             </ul>
                         </div>
-                        <div class="p-6 pt-0"><a href="pesan.html?paket=hemat" class="btn btn-outline w-full py-3 text-sm">Pesan Paket Ini</a></div>
+                        <div class="p-6 pt-0"><a href="pesan.html?paket=hemat" class="btn btn-outline w-full py-3.5">Pesan Paket Ini</a></div>
                     </article>
 
-                    <article class="card card-ribbon card-featured flex flex-col reveal md:-mt-4" data-delay="80">
-                        <div class="bg-gradient-to-r from-saffron-400 to-chili-400 text-clay text-center py-2 font-extrabold text-[10px] uppercase tracking-widest flex justify-center items-center gap-2">
-                            <i data-lucide="flame" class="w-3 h-3 animate-flame"></i> Paling Laris
+                    <article class="card card-ribbon card-featured flex flex-col reveal" data-delay="80">
+                        <div class="bg-forest-900 text-saffron-400 text-center py-2.5 font-medium text-[10px] uppercase tracking-[0.24em]">
+                            Paling Laris
                         </div>
                         <div class="p-6 md:p-8 flex-grow">
-                            <h2 class="text-xl md:text-2xl font-bold mb-1">Paket Sedang</h2>
+                            <h2 class="font-display text-2xl md:text-3xl mb-1">Paket Sedang</h2>
                             <p class="text-xs text-taupe mb-4">Favorit untuk aqiqah & tasyakuran</p>
-                            <p class="text-2xl md:text-3xl font-display font-bold text-forest-700 mb-6" data-price="sedang">Rp 2.500.000</p>
+                            <p class="text-2xl md:text-3xl font-display text-saffron-600 mb-6" data-price="sedang">Rp 2.500.000</p>
                             <ul class="space-y-3 text-sm text-taupe">
                                 <li class="flex gap-2"><i data-lucide="check-circle" class="text-forest-500 w-4 h-4 mt-0.5"></i> 1 Ekor Kambing</li>
                                 <li class="flex gap-2"><i data-lucide="check-circle" class="text-forest-500 w-4 h-4 mt-0.5"></i> Minimal 500 Tusuk Sate</li>
@@ -77,14 +74,14 @@
                                 <li class="flex gap-2"><i data-lucide="check-circle" class="text-forest-500 w-4 h-4 mt-0.5"></i> Acar, Sambal & Bumbu</li>
                             </ul>
                         </div>
-                        <div class="p-6 pt-0"><a href="pesan.html?paket=sedang" class="btn btn-primary w-full py-3 text-sm">Pesan Sekarang</a></div>
+                        <div class="p-6 pt-0"><a href="pesan.html?paket=sedang" class="btn btn-primary w-full py-3.5">Pesan Sekarang</a></div>
                     </article>
 
                     <article class="card card-ribbon flex flex-col reveal" data-delay="160">
                         <div class="p-6 md:p-8 flex-grow">
-                            <h2 class="text-xl md:text-2xl font-bold mb-1">Paket Besar</h2>
+                            <h2 class="font-display text-2xl md:text-3xl mb-1">Paket Besar</h2>
                             <p class="text-xs text-taupe mb-4">Untuk hajatan dan acara besar</p>
-                            <p class="text-2xl md:text-3xl font-display font-bold text-forest-700 mb-6" data-price="besar">Rp 3.000.000</p>
+                            <p class="text-2xl md:text-3xl font-display text-saffron-600 mb-6" data-price="besar">Rp 3.000.000</p>
                             <ul class="space-y-3 text-sm text-taupe">
                                 <li class="flex gap-2"><i data-lucide="check-circle" class="text-forest-500 w-4 h-4 mt-0.5"></i> 1 Ekor Kambing</li>
                                 <li class="flex gap-2"><i data-lucide="check-circle" class="text-forest-500 w-4 h-4 mt-0.5"></i> Minimal 700 Tusuk Sate</li>
@@ -92,14 +89,14 @@
                                 <li class="flex gap-2"><i data-lucide="check-circle" class="text-forest-500 w-4 h-4 mt-0.5"></i> Acar, Sambal & Bumbu</li>
                             </ul>
                         </div>
-                        <div class="p-6 pt-0"><a href="pesan.html?paket=besar" class="btn btn-outline w-full py-3 text-sm">Pesan Paket Ini</a></div>
+                        <div class="p-6 pt-0"><a href="pesan.html?paket=besar" class="btn btn-outline w-full py-3.5">Pesan Paket Ini</a></div>
                     </article>
 
                     <article class="card card-ribbon flex flex-col reveal" data-delay="240">
                         <div class="p-6 md:p-8 flex-grow">
-                            <h2 class="text-xl md:text-2xl font-bold mb-1">Paket Jasa Masak</h2>
+                            <h2 class="font-display text-2xl md:text-3xl mb-1">Paket Jasa Masak</h2>
                             <p class="text-xs text-taupe mb-4">Kambing dari Anda, dapur dari kami</p>
-                            <p class="text-2xl md:text-3xl font-display font-bold text-forest-700 mb-6" data-price="jasa-masak">Rp 850.000</p>
+                            <p class="text-2xl md:text-3xl font-display text-saffron-600 mb-6" data-price="jasa-masak">Rp 850.000</p>
                             <ul class="space-y-3 text-sm text-taupe">
                                 <li class="flex gap-2"><i data-lucide="check-circle" class="text-forest-500 w-4 h-4 mt-0.5"></i> Kambing Bawa Sendiri</li>
                                 <li class="flex gap-2"><i data-lucide="check-circle" class="text-forest-500 w-4 h-4 mt-0.5"></i> Porsi Tergantung Kambing</li>
@@ -107,7 +104,7 @@
                                 <li class="flex gap-2 text-xs text-taupe italic"><i data-lucide="info" class="w-3 h-3 mt-0.5"></i> Ada biaya tambahan jika jadi lebih dari 700 tusuk sate</li>
                             </ul>
                         </div>
-                        <div class="p-6 pt-0"><a href="pesan.html?paket=jasa-masak" class="btn btn-outline w-full py-3 text-sm">Tanya Jasa Masak</a></div>
+                        <div class="p-6 pt-0"><a href="pesan.html?paket=jasa-masak" class="btn btn-outline w-full py-3.5">Tanya Jasa Masak</a></div>
                     </article>
                 </div>
 
@@ -116,16 +113,16 @@
                         <div class="lg:w-1/2 bg-forest-200 min-h-[280px] relative overflow-hidden group">
                             <img src="fotokotakan.jpg" alt="Paket Kotakan CAKSABAR berisi sate, gule, nasi, acar, dan kerupuk" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                             <div class="absolute inset-0 bg-gradient-to-t from-forest-900/50 to-transparent"></div>
-                            <span class="absolute bottom-6 left-6 bg-saffron-400 text-clay px-4 py-1.5 rounded-full font-bold text-sm shadow-lg uppercase tracking-wider">Layanan Ekstra</span>
+                            <span class="absolute bottom-6 left-6 bg-forest-900 text-saffron-400 px-4 py-1.5 font-medium text-[10px] tracking-[0.22em] uppercase">Layanan Ekstra</span>
                         </div>
                         <div class="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                            <h2 class="font-display text-3xl font-bold text-clay mb-4">Upgrade ke Paket Kotakan</h2>
+                            <h2 class="font-display text-3xl md:text-4xl text-clay mb-4">Upgrade ke Paket Kotakan</h2>
                             <p class="text-taupe mb-8 leading-relaxed">
                                 Jika berminat menjadikan hasil olahan sate dan gule ekoran Anda dalam bentuk
                                 <span class="font-bold text-clay">Kotakan</span> yang siap dibagikan, kami menyediakan layanan pengemasan lengkap.
                             </p>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                                <div class="bg-saffron-100/60 p-4 rounded-2xl border border-saffron-200">
+                                <div class="bg-cream border border-saffron-400/25 p-4">
                                     <p class="text-xs text-taupe uppercase font-bold tracking-widest mb-1">Biaya Tambahan</p>
                                     <p class="text-2xl font-bold text-forest-700">
                                         <span data-kotakan-price>Rp 12.000</span>
@@ -143,7 +140,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="pesan.html?kotakan=1" class="btn btn-primary py-4">
+                            <a href="pesan.html?kotakan=1" class="btn btn-primary w-full sm:w-auto py-4">
                                 Tanya Info Kotakan <i data-lucide="arrow-right" class="w-5 h-5"></i>
                             </a>
                         </div>
@@ -151,9 +148,9 @@
                 </article>
 
                 <div class="max-w-4xl mx-auto mb-16 reveal">
-                    <div class="bg-forest-50 border-2 border-forest-100 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
-                        <div class="w-16 h-16 bg-forest-800 rounded-full flex items-center justify-center shrink-0 shadow-lg animate-float">
-                            <i data-lucide="soup" class="text-saffron-400 w-8 h-8"></i>
+                    <div class="bg-cream-50 border border-saffron-400/25 p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+                        <div class="w-14 h-14 border border-saffron-400/40 flex items-center justify-center shrink-0">
+                            <i data-lucide="soup" class="text-saffron-500 w-7 h-7"></i>
                         </div>
                         <div class="text-center md:text-left">
                             <h2 class="text-xl font-bold text-clay mb-2 uppercase tracking-wide">Informasi Kapasitas Gule</h2>
@@ -168,32 +165,32 @@
                 </div>
 
                 <div class="text-center mb-10 reveal">
-                    <div class="skewer-rule justify-center mb-6 text-saffron-500 font-extrabold tracking-widest text-xs uppercase">Guling</div>
-                    <h2 class="font-display text-3xl md:text-4xl font-bold text-clay mb-4">Paket Kambing Guling</h2>
-                    <p class="text-taupe max-w-3xl mx-auto">Hadirkan kemewahan dalam setiap perayaan dengan sajian eksklusif yang tidak tersedia dalam porsi satuan.</p>
+                    <div class="skewer-rule justify-center mb-6 text-saffron-500 font-medium tracking-[0.32em] text-[10px] uppercase">Guling</div>
+                    <h2 class="font-display text-3xl md:text-5xl text-cream mb-4">Paket Kambing Guling</h2>
+                    <p class="text-cream/65 max-w-3xl mx-auto font-light">Hadirkan kemewahan dalam setiap perayaan dengan sajian eksklusif yang tidak tersedia dalam porsi satuan.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                    <article class="card p-6 md:p-8 border-l-[8px] border-forest-800 flex flex-col reveal">
+                    <article class="card p-6 md:p-8 border-l-2 border-saffron-500 flex flex-col reveal">
                         <div class="flex justify-between items-start mb-4 gap-3">
-                            <h3 class="text-xl md:text-2xl font-bold">Jasa Masak Kambing Guling</h3>
-                            <span class="bg-forest-100 text-clay px-3 py-1 rounded-full text-[10px] font-bold uppercase shrink-0">Kambing Sendiri</span>
+                            <h3 class="font-display text-2xl">Jasa Masak Kambing Guling</h3>
+                            <span class="border border-saffron-400/40 text-saffron-700 px-3 py-1 text-[10px] uppercase tracking-[0.16em] shrink-0">Kambing Sendiri</span>
                         </div>
                         <p class="text-taupe mb-6 text-sm leading-relaxed">Kambing dari Anda kami bakar matang dari dapur, lalu dibawa utuh ke lokasi. Tim kami melayani pengirisan di acara. Termasuk kecap khusus, acar, dan sambal.</p>
                         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t pt-6 mt-auto">
                             <p class="text-xl md:text-2xl font-display font-bold text-forest-700" data-price="guling-jasa">Rp 1.200.000</p>
-                            <a href="pesan.html?paket=guling-jasa" class="btn btn-primary w-full sm:w-auto px-8 py-2.5 text-sm">Tanya Detail</a>
+                            <a href="pesan.html?paket=guling-jasa" class="btn btn-primary w-full sm:w-auto px-8 py-3.5">Tanya Detail</a>
                         </div>
                     </article>
-                    <article class="card p-6 md:p-8 border-l-[8px] border-saffron-500 flex flex-col reveal" data-delay="120">
+                    <article class="card p-6 md:p-8 border-l-2 border-saffron-400 flex flex-col reveal" data-delay="120">
                         <div class="flex justify-between items-start mb-4 gap-3">
-                            <h3 class="text-xl md:text-2xl font-bold">Kambing Guling (Dari Kami)</h3>
-                            <span class="bg-saffron-100 text-saffron-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase shrink-0">Kambing Dari Kami</span>
+                            <h3 class="font-display text-2xl">Kambing Guling (Dari Kami)</h3>
+                            <span class="border border-saffron-400/40 text-saffron-700 px-3 py-1 text-[10px] uppercase tracking-[0.16em] shrink-0">Kambing Dari Kami</span>
                         </div>
                         <p class="text-taupe mb-6 text-sm leading-relaxed">Kambing pilihan dari kami yang dibakar matang dari dapur, lalu dibawa utuh ke lokasi. Tim kami melayani pengirisan di acara. Termasuk kecap khusus, acar, dan sambal.</p>
                         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t pt-6 mt-auto">
                             <p class="text-xl md:text-2xl font-display font-bold text-forest-700" data-price="guling-kami">Rp 2.500.000</p>
-                            <a href="pesan.html?paket=guling-kami" class="btn btn-gold w-full sm:w-auto px-8 py-2.5 text-sm">Pesan Sekarang</a>
+                            <a href="pesan.html?paket=guling-kami" class="btn btn-gold w-full sm:w-auto px-8 py-3.5">Pesan Sekarang</a>
                         </div>
                     </article>
                 </div>
@@ -201,23 +198,23 @@
         </section>
     </main>
 
-    <footer class="bg-forest-900 text-taupe py-14 hidden md:block">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h2 class="font-display text-3xl text-saffron-400 font-bold mb-5 tracking-widest">CAKSABAR</h2>
-            <p class="mb-8 max-w-2xl mx-auto leading-relaxed">Menghadirkan kenyamanan cita rasa otentik dalam balutan layanan modern yang praktis.</p>
-            <p class="text-xs uppercase tracking-widest opacity-50">&copy; <span data-year></span> Warung Sate Caksabar Lumajang. Seluruh Hak Cipta Dilindungi.</p>
+    <footer class="bg-forest-900 text-taupe py-16 hidden md:block border-t border-saffron-400/15">
+        <div class="max-w-6xl mx-auto px-8 text-center">
+            <h2 class="font-display text-3xl text-saffron-400 tracking-[0.32em] mb-5">CAKSABAR</h2>
+            <p class="mb-8 max-w-xl mx-auto leading-relaxed font-light text-cream/55">Menghadirkan kenyamanan cita rasa otentik dalam balutan layanan yang tenang dan teliti.</p>
+            <p class="text-[10px] uppercase tracking-[0.28em] text-cream/30">&copy; <span data-year></span> Warung Sate Caksabar Lumajang</p>
         </div>
     </footer>
 
-    <nav class="md:hidden fixed bottom-0 inset-x-0 glass text-white border-t border-white/10 flex justify-around py-3 text-[10px] uppercase tracking-widest z-[60]">
+    <nav class="mnav md:hidden fixed bottom-0 inset-x-0 glass text-white border-t border-white/10 flex justify-around pt-2 z-[60]">
         <a href="index.html" data-nav="home" class="mnav-item flex flex-col items-center gap-1 text-white/70">
-            <i data-lucide="star" class="w-5 h-5"></i> Beranda
+            <i data-lucide="star" class="w-6 h-6"></i> Beranda
         </a>
         <a href="menu.html" data-nav="menu" class="mnav-item flex flex-col items-center gap-1 text-white/70">
-            <i data-lucide="utensils" class="w-5 h-5"></i> Menu
+            <i data-lucide="utensils" class="w-6 h-6"></i> Menu
         </a>
         <a href="pesan.html" data-nav="contact" class="mnav-item flex flex-col items-center gap-1 text-white/70">
-            <i data-lucide="phone" class="w-5 h-5"></i> Kontak
+            <i data-lucide="phone" class="w-6 h-6"></i> Kontak
         </a>
     </nav>
 

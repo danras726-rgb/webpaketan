@@ -198,8 +198,6 @@
         stickyHeader();
         scrollReveal();
         countUp();
-        buildSteam();
-        spiceFlakes();
         protectContent();
         renderIcons();
     };
