@@ -155,7 +155,7 @@
 
     const spiceFlakes = () => {
         document.querySelectorAll('[data-spice]').forEach((host) => {
-            const colors = ['#ef4444', '#f59e0b', '#10b981', '#f97316', '#84cc16'];
+            const colors = ['#F3A318', '#F1AE67', '#773401', '#523523', '#A18476'];
             const total = Number(host.dataset.spice) || 10;
             for (let i = 0; i < total; i += 1) {
                 const flake = document.createElement('span');

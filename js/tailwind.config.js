@@ -1,36 +1,42 @@
-/* Konfigurasi tema Tailwind (Play CDN) — dipakai semua halaman. */
+/* Konfigurasi tema Tailwind (Play CDN) — palet CAKSABAR */
 tailwind.config = {
     theme: {
         extend: {
             colors: {
                 forest: {
-                    50: '#ecfdf5',
-                    100: '#d1fae5',
-                    200: '#a7f3d0',
-                    300: '#6ee7b7',
-                    400: '#34d399',
-                    500: '#10b981',
-                    600: '#059669',
-                    700: '#05714c',
-                    800: '#064e3b',
-                    900: '#04331f'
+                    50: '#F4EBE3',
+                    100: '#EBDDD0',
+                    200: '#D4BBA8',
+                    300: '#A18476',
+                    400: '#8A6A58',
+                    500: '#F3A318',
+                    600: '#773401',
+                    700: '#773401',
+                    800: '#523523',
+                    900: '#523523'
                 },
                 saffron: {
-                    100: '#fef3c7',
-                    200: '#fde68a',
-                    300: '#fcd34d',
-                    400: '#fbbf24',
-                    500: '#f59e0b',
-                    600: '#d97706'
+                    100: '#F8E4C8',
+                    200: '#F6D0A0',
+                    300: '#F1AE67',
+                    400: '#F3A318',
+                    500: '#F3A318',
+                    600: '#F1AE67',
+                    700: '#773401'
                 },
                 chili: {
-                    300: '#fca5a5',
-                    400: '#f87171',
-                    500: '#ef4444',
-                    600: '#dc2626'
+                    300: '#F1AE67',
+                    400: '#F3A318',
+                    500: '#F3A318',
+                    600: '#773401'
                 },
-                cream: '#fffbf4',
-                clay: '#2b211a'
+                cream: {
+                    DEFAULT: '#EBDDD0',
+                    50: '#F7F1EA'
+                },
+                clay: '#773401',
+                taupe: '#A18476',
+                honey: '#F1AE67'
             },
             fontFamily: {
                 sans: ['Figtree', 'Segoe UI', 'system-ui', 'sans-serif'],

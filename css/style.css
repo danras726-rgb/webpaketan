@@ -4,14 +4,18 @@
    ========================================================================== */
 
 :root {
-    --forest-900: #04331f;
-    --forest-800: #064e3b;
-    --forest-700: #05714c;
-    --saffron-400: #fbbf24;
-    --saffron-500: #f59e0b;
-    --chili-500: #ef4444;
-    --cream: #fffbf4;
-    --ink: #2b211a;
+    --cream: #EBDDD0;
+    --ink: #773401;
+    --espresso: #523523;
+    --accent: #F3A318;
+    --honey: #F1AE67;
+    --taupe: #A18476;
+    --forest-900: #523523;
+    --forest-800: #523523;
+    --forest-700: #773401;
+    --saffron-400: #F3A318;
+    --saffron-500: #F3A318;
+    --chili-500: #F1AE67;
 }
 
 * {
@@ -62,8 +66,8 @@ body {
 
 input::selection,
 textarea::selection {
-    background: var(--saffron-400);
-    color: var(--forest-900);
+    background: var(--accent);
+    color: var(--ink);
 }
 
 ::-webkit-scrollbar {
@@ -71,11 +75,11 @@ textarea::selection {
 }
 
 ::-webkit-scrollbar-track {
-    background: #f3ece1;
+    background: var(--cream);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--forest-700), var(--forest-900));
+    background: linear-gradient(180deg, var(--espresso), var(--ink));
     border-radius: 99px;
 }
 
@@ -83,7 +87,7 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2305714c' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23773401' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     padding-right: 2.75rem;
@@ -102,9 +106,9 @@ input[type='number']::-webkit-inner-spin-button {
 .bg-spice {
     background-color: var(--cream);
     background-image:
-        radial-gradient(circle at 12% 18%, rgba(251, 191, 36, 0.18), transparent 42%),
-        radial-gradient(circle at 88% 12%, rgba(16, 185, 129, 0.16), transparent 40%),
-        radial-gradient(circle at 70% 88%, rgba(239, 68, 68, 0.12), transparent 45%);
+        radial-gradient(circle at 12% 18%, rgba(243, 163, 24, 0.22), transparent 42%),
+        radial-gradient(circle at 88% 12%, rgba(241, 174, 103, 0.2), transparent 40%),
+        radial-gradient(circle at 70% 88%, rgba(119, 52, 1, 0.1), transparent 45%);
 }
 
 .bg-grain::before {
@@ -117,7 +121,7 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .text-gradient-fire {
-    background: linear-gradient(100deg, #f59e0b, #ef4444 45%, #f59e0b 80%);
+    background: linear-gradient(100deg, #F3A318, #F1AE67 45%, #F3A318 80%);
     background-size: 220% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -126,7 +130,7 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .text-gradient-leaf {
-    background: linear-gradient(100deg, #05714c, #10b981 50%, #05714c);
+    background: linear-gradient(100deg, #773401, #F3A318 50%, #773401);
     background-size: 220% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -141,7 +145,7 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .glass {
-    background: rgba(4, 51, 31, 0.82);
+    background: rgba(82, 53, 35, 0.92);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 }
@@ -164,7 +168,7 @@ input[type='number']::-webkit-inner-spin-button {
     height: 2px;
     width: 0;
     border-radius: 99px;
-    background: linear-gradient(90deg, var(--saffron-400), var(--chili-500));
+    background: linear-gradient(90deg, var(--accent), var(--honey));
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -220,36 +224,36 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .btn-primary {
-    background: linear-gradient(120deg, var(--forest-800), var(--forest-700));
-    color: #fff;
-    box-shadow: 0 14px 30px -12px rgba(5, 113, 76, 0.75);
+    background: linear-gradient(120deg, var(--accent), #e09210);
+    color: var(--ink);
+    box-shadow: 0 14px 30px -12px rgba(243, 163, 24, 0.75);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 22px 40px -14px rgba(5, 113, 76, 0.85);
+    box-shadow: 0 22px 40px -14px rgba(243, 163, 24, 0.85);
 }
 
 .btn-gold {
-    background: linear-gradient(120deg, var(--saffron-400), var(--saffron-500));
-    color: var(--forest-900);
-    box-shadow: 0 14px 30px -12px rgba(245, 158, 11, 0.8);
+    background: linear-gradient(120deg, var(--accent), var(--honey));
+    color: var(--ink);
+    box-shadow: 0 14px 30px -12px rgba(243, 163, 24, 0.8);
 }
 
 .btn-gold:hover {
     transform: translateY(-3px);
-    box-shadow: 0 22px 40px -14px rgba(245, 158, 11, 0.9);
+    box-shadow: 0 22px 40px -14px rgba(241, 174, 103, 0.9);
 }
 
 .btn-outline {
-    border: 2px solid var(--forest-800);
-    color: var(--forest-800);
-    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid var(--ink);
+    color: var(--ink);
+    background: rgba(235, 221, 208, 0.7);
 }
 
 .btn-outline:hover {
-    background: var(--forest-800);
-    color: #fff;
+    background: var(--espresso);
+    color: #EBDDD0;
     transform: translateY(-3px);
 }
 
@@ -281,21 +285,21 @@ input[type='number']::-webkit-inner-spin-button {
 
 .card {
     position: relative;
-    background: #fff;
+    background: #F7F1EA;
     border-radius: 1.75rem;
-    border: 1px solid rgba(4, 51, 31, 0.08);
-    box-shadow: 0 18px 40px -28px rgba(4, 51, 31, 0.55);
+    border: 1px solid rgba(161, 132, 118, 0.28);
+    box-shadow: 0 18px 40px -28px rgba(82, 53, 35, 0.45);
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 34px 60px -30px rgba(4, 51, 31, 0.6);
+    box-shadow: 0 34px 60px -30px rgba(82, 53, 35, 0.5);
 }
 
 .card-featured {
-    border-color: var(--saffron-400);
-    box-shadow: 0 24px 50px -26px rgba(245, 158, 11, 0.7);
+    border-color: var(--accent);
+    box-shadow: 0 24px 50px -26px rgba(243, 163, 24, 0.7);
 }
 
 /* Garis pelangi rempah di tepi atas kartu */
@@ -307,7 +311,7 @@ input[type='number']::-webkit-inner-spin-button {
     right: 8%;
     height: 4px;
     border-radius: 99px;
-    background: linear-gradient(90deg, #10b981, #fbbf24, #ef4444);
+    background: linear-gradient(90deg, #523523, #F3A318, #F1AE67);
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 0.45s ease;
@@ -428,27 +432,27 @@ input[type='number']::-webkit-inner-spin-button {
     0% {
         transform: scale(1) rotate(-5deg);
         opacity: 0.85;
-        color: #f59e0b;
+        color: #F3A318;
     }
     25% {
         transform: scale(1.14) rotate(2deg);
         opacity: 1;
-        color: #ef4444;
+        color: #F1AE67;
     }
     50% {
         transform: scale(0.98) rotate(5deg);
         opacity: 0.85;
-        color: #f59e0b;
+        color: #F3A318;
     }
     75% {
         transform: scale(1.18) rotate(-2deg);
         opacity: 1;
-        color: #f97316;
+        color: #773401;
     }
     100% {
         transform: scale(1) rotate(-5deg);
         opacity: 0.85;
-        color: #f59e0b;
+        color: #F3A318;
     }
 }
 
@@ -539,7 +543,7 @@ input[type='number']::-webkit-inner-spin-button {
     height: 4px;
     width: 0;
     border-radius: 99px;
-    background: linear-gradient(90deg, #10b981, #fbbf24, #ef4444);
+    background: linear-gradient(90deg, #523523, #F3A318, #F1AE67);
     transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
 }
 
@@ -569,8 +573,8 @@ input[type='number']::-webkit-inner-spin-button {
 .field {
     width: 100%;
     border-radius: 1rem;
-    border: 2px solid #e7ddcd;
-    background: #fffdf9;
+    border: 2px solid var(--taupe);
+    background: #F7F1EA;
     padding: 0.9rem 1rem;
     color: var(--ink);
     transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
@@ -578,13 +582,13 @@ input[type='number']::-webkit-inner-spin-button {
 
 .field:focus {
     outline: none;
-    border-color: var(--forest-700);
-    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.16);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(243, 163, 24, 0.22);
     transform: translateY(-2px);
 }
 
 .field::placeholder {
-    color: #b3a595;
+    color: var(--taupe);
 }
 
 .field-label {
@@ -593,7 +597,7 @@ input[type='number']::-webkit-inner-spin-button {
     font-weight: 800;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #8a7a68;
+    color: var(--taupe);
     margin-bottom: 0.5rem;
 }
 
@@ -669,7 +673,7 @@ input[type='number']::-webkit-inner-spin-button {
     content: '';
     flex: 1;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #f59e0b, #ef4444, #10b981, transparent);
+    background: linear-gradient(90deg, transparent, #F3A318, #F1AE67, #773401, transparent);
     border-radius: 99px;
 }
 
@@ -709,8 +713,8 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .estimate-card {
-    background: linear-gradient(180deg, #fffdf8, #fff7e8);
-    border: 2px dashed rgba(245, 158, 11, 0.45);
+    background: linear-gradient(180deg, #F7F1EA, #F8E4C8);
+    border: 2px dashed rgba(243, 163, 24, 0.5);
     border-radius: 1.5rem;
 }
 
@@ -722,15 +726,16 @@ input[type='number']::-webkit-inner-spin-button {
     padding: 0.3rem 0.8rem;
     font-size: 0.7rem;
     font-weight: 700;
-    background: #fff;
-    border: 1px solid #eadfce;
-    box-shadow: 0 6px 16px -12px rgba(43, 33, 26, 0.5);
+    background: #F7F1EA;
+    border: 1px solid var(--taupe);
+    color: var(--ink);
+    box-shadow: 0 6px 16px -12px rgba(82, 53, 35, 0.45);
 }
 
 .logo-ring {
     position: absolute;
     inset: -10%;
-    border: 2px dashed rgba(251, 191, 36, 0.55);
+    border: 2px dashed rgba(243, 163, 24, 0.55);
     border-radius: 50%;
     animation: spin 28s linear infinite;
 }
@@ -738,7 +743,7 @@ input[type='number']::-webkit-inner-spin-button {
 .toggle-track {
     width: 2.75rem;
     height: 1.5rem;
-    background: #d6cbb8;
+    background: var(--taupe);
     border-radius: 999px;
     position: relative;
     transition: background 0.25s ease;
@@ -751,14 +756,14 @@ input[type='number']::-webkit-inner-spin-button {
     left: 2px;
     width: 1.25rem;
     height: 1.25rem;
-    background: #fff;
+    background: #F7F1EA;
     border-radius: 999px;
-    box-shadow: 0 4px 10px rgba(43, 33, 26, 0.18);
+    box-shadow: 0 4px 10px rgba(82, 53, 35, 0.18);
     transition: transform 0.25s ease;
 }
 
 input:checked + .toggle-track {
-    background: var(--forest-700);
+    background: var(--accent);
 }
 
 input:checked + .toggle-track::after {
@@ -771,10 +776,10 @@ input:checked + .toggle-track::after {
 
 @keyframes cta-glow {
     0%, 100% {
-        box-shadow: 0 8px 18px -10px rgba(251, 191, 36, 0.7);
+        box-shadow: 0 8px 18px -10px rgba(243, 163, 24, 0.7);
     }
     50% {
-        box-shadow: 0 12px 28px -8px rgba(251, 191, 36, 1);
+        box-shadow: 0 12px 28px -8px rgba(243, 163, 24, 1);
     }
 }
 
