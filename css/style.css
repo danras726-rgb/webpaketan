@@ -1,0 +1,751 @@
+/* ==========================================================================
+   CAKSABAR — Sate & Gule Lumajang
+   Atelier stylesheet (elegan, editorial)
+   ========================================================================== */
+
+:root {
+    --ivory: #F7F3ED;
+    --paper: #FBFAF7;
+    --ink: #1A1512;
+    --espresso: #100E0C;
+    --accent: #C4A46A;
+    --honey: #D4C0A0;
+    --taupe: #7A6E64;
+    --forest-900: #100E0C;
+    --forest-800: #1A1512;
+    --forest-700: #2A211A;
+    --saffron-400: #C4A46A;
+    --saffron-500: #B08D52;
+    --chili-500: #C4A46A;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input,
+textarea,
+select {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--ivory);
+    color: var(--ink);
+    overflow-x: hidden;
+    line-height: 1.75;
+    letter-spacing: 0.015em;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+.font-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+::selection {
+    background: transparent;
+    color: inherit;
+}
+
+input::selection,
+textarea::selection {
+    background: var(--accent);
+    color: var(--ink);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 8px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23C4A46A' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.75rem;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ==========================================================================
+   1. Latar & aksen
+   ========================================================================== */
+
+.bg-spice {
+    background-color: var(--espresso);
+    background-image:
+        linear-gradient(180deg, rgba(16, 14, 12, 0.78), rgba(16, 14, 12, 0.86)),
+        url('../backround_ini_prasmanan_sategule.jpg');
+    background-size: cover;
+    background-position: center 42%;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+    .bg-spice {
+        background-attachment: fixed;
+    }
+}
+
+.bg-grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.18;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+.text-gradient-fire,
+.text-gradient-leaf {
+    color: var(--accent);
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    animation: none;
+}
+
+.glass {
+    background: rgba(16, 14, 12, 0.78);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(196, 164, 106, 0.18);
+}
+
+/* ==========================================================================
+   2. Navigasi
+   ========================================================================== */
+
+.nav-link {
+    position: relative;
+    padding-bottom: 6px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background: var(--accent);
+    transition: width 0.35s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+    width: 100%;
+}
+
+.nav-link.is-active {
+    color: var(--accent);
+}
+
+.mnav {
+    padding-bottom: max(0.55rem, env(safe-area-inset-bottom));
+}
+
+.mnav-item {
+    position: relative;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 0.75rem;
+    min-width: 4.75rem;
+    padding: 0.45rem 0.35rem;
+    transition: color 0.25s ease;
+}
+
+.mnav-item.is-active {
+    color: var(--accent);
+}
+
+.mnav-item.is-active::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 2px;
+    border-radius: 99px;
+    background: var(--accent);
+}
+
+/* ==========================================================================
+   3. Tombol
+   ========================================================================== */
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    border-radius: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 0.95rem;
+    min-height: 48px;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (max-width: 767px) {
+    main .btn {
+        width: 100%;
+    }
+}
+
+.btn:active {
+    transform: none;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--espresso);
+    box-shadow: none;
+}
+
+.btn-primary:hover {
+    background: var(--honey);
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-gold {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    box-shadow: none;
+}
+
+.btn-gold:hover {
+    background: var(--accent);
+    color: var(--espresso);
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-outline {
+    border: 1px solid var(--accent);
+    color: var(--ink);
+    background: var(--ivory);
+}
+
+.btn-outline:hover {
+    background: var(--ink);
+    color: var(--ivory);
+    transform: none;
+}
+
+.btn::before {
+    display: none;
+}
+
+.page-hero .btn-outline {
+    border-color: rgba(247, 243, 237, 0.7);
+    color: var(--ivory);
+    background: rgba(16, 14, 12, 0.4);
+    backdrop-filter: blur(8px);
+}
+
+.page-hero .btn-outline:hover {
+    background: var(--ivory);
+    color: var(--espresso);
+}
+
+/* ==========================================================================
+   4. Kartu
+   ========================================================================== */
+
+.card {
+    position: relative;
+    background: var(--paper);
+    border-radius: 1rem;
+    border: 1px solid rgba(196, 164, 106, 0.22);
+    box-shadow: none;
+    transition: border-color 0.35s ease, background-color 0.35s ease;
+}
+
+.card:hover {
+    transform: none;
+    border-color: var(--accent);
+    box-shadow: none;
+}
+
+.card-featured {
+    border-color: var(--accent);
+    box-shadow: none;
+}
+
+.card-ribbon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    border-radius: 99px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.card-ribbon:hover::before,
+.card-featured.card-ribbon::before {
+    transform: scaleX(1);
+}
+
+.feature-icon {
+    border: 1px solid rgba(196, 164, 106, 0.35);
+    border-radius: 0.85rem;
+    background: transparent !important;
+    transition: border-color 0.35s ease;
+}
+
+.group:hover .feature-icon {
+    transform: none;
+    border-color: var(--accent);
+}
+
+/* ==========================================================================
+   5. Animasi masuk
+   ========================================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.reveal-left {
+    transform: translateY(18px);
+}
+
+.reveal-right {
+    transform: translateY(18px);
+}
+
+.reveal-zoom {
+    transform: translateY(18px);
+}
+
+.fade-up {
+    animation: fade-up 0.9s ease both;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ==========================================================================
+   6. Gerak halus (tanpa efek bermain)
+   ========================================================================== */
+
+@keyframes float-y {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.animate-blob {
+    animation: none;
+    border-radius: 0;
+}
+
+.steam {
+    display: none;
+}
+
+.animate-flame {
+    animation: none;
+}
+
+.animate-drift,
+.animate-float {
+    animation: none;
+}
+
+.animate-spin-slow {
+    animation: none;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.92);
+        opacity: 0.45;
+    }
+    80%, 100% {
+        transform: scale(1.45);
+        opacity: 0;
+    }
+}
+
+.pulse-ring::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: rgba(37, 211, 102, 0.28);
+    animation: pulse-ring 2.8s ease-out infinite;
+    z-index: -1;
+}
+
+.marquee {
+    overflow: hidden;
+    position: relative;
+    letter-spacing: 0.16em;
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.marquee__track {
+    display: flex;
+    width: max-content;
+    animation: marquee 38s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.title-rule {
+    display: block;
+    height: 1px;
+    width: 0;
+    background: var(--accent);
+    transition: width 0.9s ease 0.15s;
+}
+
+.reveal.is-visible .title-rule,
+.title-rule.is-visible {
+    width: 72px;
+}
+
+.animate-wobble {
+    animation: none;
+}
+
+/* ==========================================================================
+   7. Formulir
+   ========================================================================== */
+
+.field {
+    width: 100%;
+    border-radius: 0.85rem;
+    border: 1px solid rgba(196, 164, 106, 0.35);
+    background: var(--paper);
+    padding: 0.95rem 1rem;
+    color: var(--ink);
+    font-size: 16px;
+    min-height: 48px;
+    transition: border-color 0.25s ease;
+}
+
+.field:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: none;
+    transform: none;
+}
+
+.field::placeholder {
+    color: var(--taupe);
+}
+
+.field-label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: var(--taupe);
+    margin-bottom: 0.55rem;
+}
+
+@keyframes bump {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-bump {
+    animation: bump 0.4s ease;
+}
+
+/* ==========================================================================
+   8. Aksen halaman
+   ========================================================================== */
+
+.hero-glow {
+    display: none;
+}
+
+.spice-flake {
+    display: none;
+}
+
+.skewer-rule {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    letter-spacing: 0.32em;
+}
+
+.skewer-rule::before,
+.skewer-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.page-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: var(--espresso);
+    background-image:
+        linear-gradient(90deg, rgba(16, 14, 12, 0.88) 0%, rgba(16, 14, 12, 0.78) 36%, rgba(16, 14, 12, 0.42) 68%, rgba(16, 14, 12, 0.28) 100%),
+        url('../backround_ini_prasmanan_sategule.jpg');
+    background-size: cover;
+    background-position: 68% 42%;
+    background-repeat: no-repeat;
+}
+
+.page-hero h1 {
+    color: #faf6f0;
+    text-shadow: 0 10px 40px rgba(16, 14, 12, 0.45);
+}
+
+.wa-fab {
+    position: fixed;
+    right: 1rem;
+    bottom: calc(5.75rem + env(safe-area-inset-bottom));
+    z-index: 70;
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #128c7e;
+    color: #fff;
+    box-shadow: 0 12px 28px -16px rgba(18, 140, 126, 0.8);
+    transition: transform 0.25s ease;
+}
+
+.wa-fab:hover {
+    transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+    .wa-fab {
+        bottom: 1.6rem;
+        right: 1.6rem;
+        width: 3.75rem;
+        height: 3.75rem;
+    }
+}
+
+.estimate-card {
+    background: var(--ivory);
+    border: 1px solid rgba(196, 164, 106, 0.4);
+    border-radius: 1rem;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    background: transparent;
+    border: 1px solid rgba(196, 164, 106, 0.4);
+    color: var(--ink);
+    box-shadow: none;
+}
+
+.logo-ring {
+    position: absolute;
+    inset: -8%;
+    border: 1px solid rgba(196, 164, 106, 0.45);
+    border-radius: 0;
+    animation: none;
+}
+
+.toggle-track {
+    width: 2.75rem;
+    height: 1.5rem;
+    background: var(--taupe);
+    border-radius: 999px;
+    position: relative;
+    transition: background 0.25s ease;
+}
+
+.toggle-track::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: var(--ivory);
+    border-radius: 999px;
+    box-shadow: none;
+    transition: transform 0.25s ease;
+}
+
+input:checked + .toggle-track {
+    background: var(--accent);
+}
+
+input:checked + .toggle-track::after {
+    transform: translateX(1.35rem);
+}
+
+.nav-cta {
+    animation: none;
+}
+
+.orbit-dot {
+    display: none;
+}
+
+.logo-frame {
+    position: relative;
+    padding: 7px;
+    border-radius: 999px;
+    border: 1px solid rgba(196, 164, 106, 0.5);
+    box-shadow: 0 18px 40px -18px rgba(16, 14, 12, 0.55);
+    animation: float-y 7s ease-in-out infinite;
+    background: rgba(247, 243, 237, 0.08);
+}
+
+.logo-frame img {
+    display: block;
+    border-radius: 999px;
+}
+
+.logo-frame::before,
+.logo-frame::after {
+    display: none;
+}
+
+.kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--accent);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.kicker::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+}
+
+/* ==========================================================================
+   9. Aksesibilitas gerak
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
