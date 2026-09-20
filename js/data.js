@@ -13,6 +13,13 @@ const CAKSABAR = {
     mapsUrl: 'https://maps.google.com/?q=Sate+Caksabar+Jl.+Brigjen+Katamso+Lumajang',
     hours: '11.00 - 21.00 WIB',
     hoursNote: 'Warung dapat tutup jika pesanan padat. Simpan nomor kami untuk info terkini.',
+    instagram: 'https://www.instagram.com/caksabarsategule/',
+    tiktok: 'https://www.tiktok.com/@sategulecaksabar',
+
+    banks: [
+        { id: 'bca', name: 'BCA', number: '1251292081', holder: 'Muhammad Danras' },
+        { id: 'bsi', name: 'BSI', number: '7269636817', holder: 'Muhammad Danras' }
+    ],
 
     /* Layanan tambahan per kotak. Dipakai di kartu menu, label formulir,
        kalkulasi total, dan rincian pesan WhatsApp. */
@@ -107,27 +114,35 @@ const priceLabel = (pkg) => (pkg && pkg.price ? formatRupiah(pkg.price) : 'Hubun
 /**
  * Satu fungsi hitung untuk kartu harga, ringkasan live, dan teks WhatsApp.
  * boxCount hanya dihitung jika layanan kotakan aktif.
+ * ekorCount mengalikan harga paket (minimal 1 jika paket punya harga).
  */
-const calculateQuote = ({ packageId, kotakanEnabled, boxCount } = {}) => {
+const calculateQuote = ({ packageId, kotakanEnabled, boxCount, ekorCount } = {}) => {
     const pkg = findPackage(packageId);
     const basePrice = pkg && pkg.price ? pkg.price : 0;
+    const hasFixedPrice = Boolean(pkg && pkg.price);
+    const ekor = hasFixedPrice ? Math.max(1, parseInt(ekorCount, 10) || 1) : 1;
+    const packageTotal = basePrice * ekor;
     const perBox = CAKSABAR.kotakan.pricePerBox;
     const qty = kotakanEnabled ? Math.max(0, parseInt(boxCount, 10) || 0) : 0;
     const kotakanTotal = qty * perBox;
+    const total = packageTotal + kotakanTotal;
 
     return {
         pkg,
         packageName: pkg ? pkg.name : '',
         basePrice,
         baseLabel: pkg ? priceLabel(pkg) : '—',
+        ekor,
+        packageTotal,
+        packageTotalLabel: formatRupiah(packageTotal),
         perBox,
         perBoxLabel: formatRupiah(perBox),
         qty,
         kotakanEnabled: Boolean(kotakanEnabled),
         kotakanTotal,
         kotakanLabel: formatRupiah(kotakanTotal),
-        total: basePrice + kotakanTotal,
-        totalLabel: formatRupiah(basePrice + kotakanTotal),
-        hasFixedPrice: Boolean(pkg && pkg.price)
+        total,
+        totalLabel: formatRupiah(total),
+        hasFixedPrice
     };
 };

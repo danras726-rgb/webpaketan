@@ -523,7 +523,17 @@ input[type='number']::-webkit-inner-spin-button {
     color: var(--taupe);
 }
 
-.field-label {
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
     display: block;
     font-size: 0.78rem;
     font-weight: 500;
@@ -730,8 +740,341 @@ input:checked + .toggle-track::after {
     background: var(--accent);
 }
 
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0.55rem 1rem;
+    border: 1px solid rgba(196, 164, 106, 0.45);
+    border-radius: 0.85rem;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.social-link:hover {
+    background: rgba(196, 164, 106, 0.12);
+    color: var(--honey);
+    border-color: var(--accent);
+}
+
+.social-link--icon {
+    width: 2.6rem;
+    padding: 0;
+}
+
 /* ==========================================================================
-   9. Aksesibilitas gerak
+   9. Rekening transfer
+   ========================================================================== */
+
+.stepper {
+    display: flex;
+    align-items: center;
+    max-width: 16rem;
+    border-radius: 0.85rem;
+    border: 1px solid rgba(196, 164, 106, 0.35);
+    background: var(--paper);
+    overflow: hidden;
+}
+
+.stepper-btn {
+    width: 48px;
+    min-height: 48px;
+    flex-shrink: 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.stepper-btn:hover,
+.stepper-btn:focus {
+    outline: none;
+    background: rgba(196, 164, 106, 0.12);
+    color: var(--espresso);
+}
+
+.stepper-value {
+    flex: 1;
+    min-width: 0;
+    min-height: 48px;
+    border: 0;
+    border-left: 1px solid rgba(196, 164, 106, 0.25);
+    border-right: 1px solid rgba(196, 164, 106, 0.25);
+    background: transparent;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    -moz-appearance: textfield;
+}
+
+.stepper-value::-webkit-outer-spin-button,
+.stepper-value::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.pkg-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+    min-height: 48px;
+    padding: 0.95rem 1rem;
+    border-radius: 0.85rem;
+    border: 1px solid rgba(196, 164, 106, 0.35);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.pkg-trigger:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.pkg-trigger-caret {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-right: 1.5px solid var(--taupe);
+    border-bottom: 1.5px solid var(--taupe);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+    margin-top: -0.2rem;
+}
+
+.pkg-modal[hidden] {
+    display: none;
+}
+
+.pkg-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+.pkg-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(16, 14, 12, 0.55);
+}
+
+.pkg-modal-sheet {
+    position: relative;
+    z-index: 1;
+    width: min(640px, 100%);
+    max-height: min(82vh, 640px);
+    overflow: auto;
+    border-radius: 1rem;
+    border: 1px solid rgba(196, 164, 106, 0.35);
+    background: var(--ivory);
+    box-shadow: 0 24px 60px rgba(16, 14, 12, 0.28);
+    padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.pkg-modal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid rgba(196, 164, 106, 0.25);
+}
+
+.pkg-modal-close {
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.pkg-modal-close:hover,
+.pkg-modal-close:focus {
+    outline: none;
+    background: rgba(196, 164, 106, 0.12);
+}
+
+.pkg-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pkg-table th {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--taupe);
+    text-align: left;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid rgba(196, 164, 106, 0.3);
+}
+
+.pkg-table td {
+    padding: 0.9rem 0.75rem;
+    border-bottom: 1px solid rgba(196, 164, 106, 0.18);
+    font-size: 0.92rem;
+    color: var(--ink);
+    vertical-align: top;
+}
+
+.pkg-table tbody tr {
+    cursor: pointer;
+}
+
+.pkg-table tbody tr:hover,
+.pkg-table tbody tr.is-selected {
+    background: rgba(196, 164, 106, 0.12);
+}
+
+.pkg-table .pkg-name {
+    font-weight: 600;
+}
+
+.pkg-table .pkg-price {
+    white-space: nowrap;
+    color: var(--espresso);
+    font-weight: 600;
+}
+
+.pkg-table .pkg-note {
+    color: var(--taupe);
+    font-size: 0.82rem;
+}
+
+@media (max-width: 767px) {
+    .stepper {
+        max-width: none;
+    }
+
+    .pkg-table th:nth-child(3),
+    .pkg-table td:nth-child(3) {
+        display: none;
+    }
+
+    .pkg-table .pkg-name {
+        display: block;
+    }
+
+    .pkg-table .pkg-note-mobile {
+        display: block;
+        margin-top: 0.25rem;
+        color: var(--taupe);
+        font-size: 0.75rem;
+        font-weight: 400;
+    }
+}
+
+@media (min-width: 768px) {
+    .pkg-table .pkg-note-mobile {
+        display: none;
+    }
+}
+
+.rekening-panel[hidden] {
+    display: none !important;
+}
+
+.rekening-panel.is-open {
+    display: block;
+}
+
+.bank-row {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    width: 100%;
+    min-height: 56px;
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-radius: 0.85rem;
+    border: 1px solid rgba(196, 164, 106, 0.35);
+    background: var(--paper);
+    color: var(--ink);
+    cursor: pointer;
+    transition: border-color 0.25s ease;
+}
+
+.bank-row:hover,
+.bank-row:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.bank-row.is-copied {
+    border-color: var(--accent);
+}
+
+.bank-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 0.65rem;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #fff;
+}
+
+.bank-logo--bca {
+    background: #0055a5;
+}
+
+.bank-logo--bsi {
+    background: #0a7a4b;
+}
+
+.bank-row-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+.bank-row-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.bank-row-number {
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+}
+
+.bank-row-holder,
+.bank-row-hint {
+    font-size: 0.72rem;
+    color: var(--taupe);
+}
+
+@media (max-width: 767px) {
+    .bank-row {
+        min-height: 64px;
+    }
+}
+
+/* ==========================================================================
+   10. Aksesibilitas gerak
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {

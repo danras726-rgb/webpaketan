@@ -40,6 +40,14 @@
         document.querySelectorAll('[data-year]').forEach((el) => {
             el.textContent = new Date().getFullYear();
         });
+
+        document.querySelectorAll('[data-instagram]').forEach((el) => {
+            if (CAKSABAR.instagram) el.href = CAKSABAR.instagram;
+        });
+
+        document.querySelectorAll('[data-tiktok]').forEach((el) => {
+            if (CAKSABAR.tiktok) el.href = CAKSABAR.tiktok;
+        });
     };
 
     const markActiveNav = () => {
@@ -177,10 +185,11 @@
         const isField = (target) => {
             if (!target) return false;
             const el = target.nodeType === 3 ? target.parentElement : target;
-            return Boolean(el && el.closest && el.closest('input, textarea, select'));
+            return Boolean(el && el.closest && el.closest('input, textarea, select, .bank-row, #rekening-panel'));
         };
 
         const block = (event) => {
+            if (document.body.dataset.allowCopy === '1') return;
             if (isField(event.target)) return;
             event.preventDefault();
         };
