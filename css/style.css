@@ -761,6 +761,14 @@ input:checked + .toggle-track::after {
     border-color: var(--accent);
 }
 
+.social-link svg,
+.social-icon {
+    width: 1.05rem;
+    height: 1.05rem;
+    flex-shrink: 0;
+    display: block;
+}
+
 .social-link--icon {
     width: 2.6rem;
     padding: 0;
